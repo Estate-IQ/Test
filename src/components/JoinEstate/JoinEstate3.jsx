@@ -1,5 +1,5 @@
 import React from "react";
-import Images from "../../assets/images/Images";
+import { Images } from "../../assets/images/Images";
 
 const Join2 = () => {
   return (

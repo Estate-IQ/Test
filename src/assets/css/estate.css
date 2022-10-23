@@ -2349,6 +2349,52 @@ input:valid {
   border-color: #eceff5;
 }
 
+.main_drop {
+  max-width: 120px;
+  font-family: var(--Montserat);
+  width: 100%;
+  position: relative;
+}
+
+.main_drop .main_drop_btn {
+  padding: 10px 12px;
+  background-color: var(--White);
+  border: 1px solid var(--Magnolia);
+  border-radius: 5px;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.main_drop .main_drop_btn img {
+  width: 20px;
+  height: 20px;
+}
+
+.main_drop .selections {
+  border-radius: 6px;
+  background-color: #fff;
+  position: absolute;
+  top: 52px;
+  border: 1px solid var(--Magnolia);
+  width: 100%;
+}
+
+.main_drop .selections .selected {
+  padding: 10px 12px;
+  cursor: pointer;
+  -webkit-transition: all 0.1s;
+  transition: all 0.1s;
+}
+
+.main_drop .selections .selected:hover {
+  background-color: var(--Magnolia);
+}
+
 @media (max-width: 768px) {
   .navlinks {
     -webkit-box-orient: vertical;
@@ -3483,7 +3529,7 @@ footer ul.breadcrumb li a:hover {
 }
 
 .search_profile .violet {
-  margin-bottom: 30px;
+  margin-bottom: 0px;
 }
 
 .violet {
@@ -3603,12 +3649,12 @@ footer ul.breadcrumb li a:hover {
   visibility: hidden;
 }
 
-.download_filter .with_blue {
+.with_blue {
   border: 0;
-  margin-top: 20px;
+  margin-top: 0px;
 }
 
-.download_filter .with_blue .select-btn {
+.with_blue .select-btn {
   background: var(--Brand-color);
   border: 0;
   color: var(--White);
@@ -4037,6 +4083,21 @@ OVERVIEW
   margin-left: 10px;
 }
 
+.group_profile .c_del {
+  width: 50%;
+}
+
+.group_profile .c_del button {
+  border: 2px solid crimson;
+  color: crimson;
+  padding: 8px 12px;
+}
+
+.group_profile .c_del button:hover {
+  background-color: crimson;
+  color: white;
+}
+
 .group_profile .Cap_estate_name .contact_info {
   margin-top: 50px;
 }
@@ -4320,6 +4381,22 @@ OVERVIEW
   line-height: 40px !important;
 }
 
+.creating_task {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.creating_task .select_me {
+  margin-top: 10px;
+  width: 180px;
+}
+
 @media (max-width: 400px) {
   .latest_estate .new_estates {
     display: block;
@@ -4336,6 +4413,9 @@ OVERVIEW
 @media (max-width: 540px) {
   .acct_info .create_img {
     display: none;
+  }
+  .with_blue {
+    margin-top: 25px;
   }
   .call_text {
     width: 10%;
@@ -4620,18 +4700,6 @@ OVERVIEW
   }
   .group_profile .Cap_estate_name {
     width: 53%;
-  }
-  .group_profile .c_del {
-    width: 50%;
-  }
-  .group_profile .c_del button {
-    border: 2px solid crimson;
-    color: crimson;
-    padding: 8px 12px;
-  }
-  .group_profile .c_del button:hover {
-    background-color: crimson;
-    color: white;
   }
   .group_profile .admins_list {
     margin-top: 0;

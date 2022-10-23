@@ -34,7 +34,7 @@ class MasterForm extends React.Component {
       showConfirmButton: true,
       showCloseButton: true,
     }).then(function () {
-      window.location = "/profile";
+      window.location = "/Test/profile";
     });
     // alert(`Your registration detail: \n
     //          Email: ${email} \n
@@ -226,7 +226,6 @@ function Step2(props) {
     </div>
   );
 }
-
 
 const returnSuccessMessage = ({ open, onClose }) => {
   // if (!open) return null;

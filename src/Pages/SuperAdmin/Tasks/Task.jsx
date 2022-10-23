@@ -2,8 +2,8 @@ import React, { useState } from "react";
 // import JSON from "./Data.json";
 import Pagination from "https://cdn.skypack.dev/rc-pagination@3.1.15";
 import NewTask from "./NewTask";
-import SVGs from "../../../assets/svg/SVGs";
-import Images from "../../../assets/images/Images";
+import { SVGs } from "../../../assets/svg/SVGs";
+import { Images } from "../../../assets/images/Images";
 import GNavbar from "../../../components/Navbar/DesktopTab";
 import Mobile from "../../../components/Navbar/Navbar";
 import { Link } from "react-router-dom";
@@ -94,7 +94,7 @@ const Estate = () => {
         {/* Dashboard - container */}
         <div className="dashboard_container">
           <div className="estates_tab">
-            <div className="adding_new">
+            <div className="creating_task">
               <div className="tabs">
                 <button
                   className={`tab ${checkActive(1, "active")}`}
@@ -115,12 +115,7 @@ const Estate = () => {
                   Completed task (25)
                 </button>
               </div>
-              {/* <button
-                className="important-btn"
-                onClick={() => setOpenModal(true)}
-              >
-                Add New Estate
-              </button> */}
+
               <NewTask selected={download} setSelected={setDownload} />
             </div>
 

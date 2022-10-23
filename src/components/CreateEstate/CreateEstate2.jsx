@@ -1,5 +1,5 @@
 import React from "react";
-import Images from "../../assets/images/Images";
+import { Images } from "../../assets/images/Images";
 import Location from "../Location/Location";
 import States from "../States/State";
 import LGAs from "../LGAs/Lgas";

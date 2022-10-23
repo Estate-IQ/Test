@@ -331,7 +331,7 @@ $submit-color-darker: #00824a;
 .search_profile {
   margin: 25px 20px;
   .violet {
-    margin-bottom: 30px;
+    margin-bottom: 0px;
   }
 }
 .violet {
@@ -431,14 +431,14 @@ $submit-color-darker: #00824a;
     opacity: 0;
     visibility: hidden;
   }
-  .with_blue {
+}
+.with_blue {
+  border: 0;
+  margin-top: 0px;
+  .select-btn {
+    background: var(--Brand-color);
     border: 0;
-    margin-top: 20px;
-    .select-btn {
-      background: var(--Brand-color);
-      border: 0;
-      color: var(--White);
-    }
+    color: var(--White);
   }
 }
 .location_before {
@@ -805,6 +805,18 @@ OVERVIEW
   }
 }
 .group_profile {
+  .c_del {
+    width: 50%;
+    button {
+      border: 2px solid crimson;
+      color: crimson;
+      padding: 8px 12px;
+      &:hover {
+        background-color: crimson;
+        color: white;
+      }
+    }
+  }
   .Cap_estate_name {
     .contact_info {
       margin-top: 50px;
@@ -1036,6 +1048,16 @@ OVERVIEW
   font-size: 25px !important;
   line-height: 40px !important;
 }
+
+.creating_task {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  .select_me {
+    margin-top: 10px;
+    width: 180px;
+  }
+}
 @media (max-width: 400px) {
   .latest_estate .new_estates {
     display: block;
@@ -1051,6 +1073,9 @@ OVERVIEW
 @media (max-width: 540px) {
   .acct_info .create_img {
     display: none;
+  }
+  .with_blue {
+    margin-top: 25px;
   }
   .call_text {
     width: 10%;
@@ -1295,18 +1320,7 @@ OVERVIEW
     .Cap_estate_name {
       width: 53%;
     }
-    .c_del {
-      width: 50%;
-      button {
-        border: 2px solid crimson;
-        color: crimson;
-        padding: 8px 12px;
-        &:hover {
-          background-color: crimson;
-          color: white;
-        }
-      }
-    }
+
     .admins_list {
       margin-top: 0;
     }

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import Images from "../assets/images/Images";
+import { Images } from "../assets/images/Images";
 
 const ChooseMode = () => {
   const [selectedPath, setSelectedPath] = useState();

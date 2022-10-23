@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import Modal from "./Advert";
-import Modal from "./Advert";
+// import Modal from "./Advert";
 
 const SelectDrop = ({ selected, setSelected }) => {
   const [openModal, setOpenModal] = useState(false);
@@ -30,32 +30,36 @@ const SelectDrop = ({ selected, setSelected }) => {
       </div>
       {isActive && (
         <div className="select_content">
-          {/* {options.map((option) => ( */}
+          {/* Advert */}
           <div
             className="select_items"
             onClick={(e) => {
-              setSelected("PDF");
-              setIsActive(false);
-            }}
-          >
-            <a href="#" download>
-              PDF
-            </a>
-          </div>
-          <div
-            className="select_items"
-            onClick={(e) => {
-              setSelected("Excel Sheet");
-              // setIsActive(false);
+              setSelected("Advert");
               setOpenModal(true);
             }}
           >
-            <a href="#" onClick={() => setOpenModal(true)}>
-              Excel Sheet
-            </a>
+            <p onClick={() => setOpenModal(true)}>Advert</p>
           </div>
-          {/* ))} */}
-
+          {/* Announcement */}
+          <div
+            className="select_items"
+            onClick={(e) => {
+              setSelected("Announcement");
+              setIsActive(false);
+            }}
+          >
+            <p>Announcement</p>
+          </div>
+          {/* Reminder */}
+          <div
+            className="select_items"
+            onClick={(e) => {
+              setSelected("Reminder");
+              setIsActive(false);
+            }}
+          >
+            <p>Reminder</p>
+          </div>
           <Modal open={openModal} onClose={() => setOpenModal(false)} />
         </div>
       )}

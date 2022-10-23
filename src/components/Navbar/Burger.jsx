@@ -4,9 +4,8 @@ import RightNav from "./RightNav";
 
 const StyledBurger = styled.div`
   width: 2rem;
-
   position: fixed;
-  top: 27px;
+  top: 25px;
   right: 20px;
   z-index: 20;
   display: none;
@@ -16,12 +15,12 @@ const StyledBurger = styled.div`
     flex-flow: column nowrap;
   }
   div {
-    width: 33px;
+    width: 30px;
     height: 3px;
-    margin: 4px;
+    margin: 3px;
     background-color: ${({ open }) => (open ? " #FFFFFF" : " #FFFFFF")};
     transform-origin: 1px;
-    transition: all 0.3s linear;
+    transition: all 0.2s linear;
     &:nth-child(1) {
       transform: ${({ open }) => (open ? "rotate(45deg)" : "rotate(0)")};
     }

@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import BreadCrumb from "./BreadCrumb";
-import SVGs from "../assets/svg/SVGs";
+import { SVGs } from "../assets/svg/SVGs";
 import email from "../assets/svg/email_a.svg";
 import call from "../assets/svg/call_a.svg";
-import Images from "../assets/images/Images";
+import { Images } from "../assets/images/Images";
 import GNavbar from "../components/Navbar/DesktopTab";
 import Mobile from "../components/Navbar/Navbar";
 
