@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { Images } from "../../assets/images/Images";
-import SVGs from "../../assets/svg/SVGs";
+import { SVGs } from "../../assets/svg/SVGs";
 
 const Ul = styled.ul`
   list-style: none;

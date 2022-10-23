@@ -53,7 +53,7 @@ const App = () => {
             <div className="card">
               <div className="card-body p-0">
                 <div className="table-filter-info">
-                  <Pagination
+                  {/* <Pagination
                     className="pagination-data"
                     showTotal={(total, range) =>
                       `${range[0]}-${range[1]} / ${total}`
@@ -65,7 +65,7 @@ const App = () => {
                     showSizeChanger={false}
                     itemRender={PrevNextArrow}
                     onShowSizeChange={PerPageChange}
-                  />
+                  /> */}
                 </div>
                 <div className="table-responsive">
                   <table className="table table-text-small mb-0">

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 // import JSON from "./Data.json";
-import Pagination from "https://cdn.skypack.dev/rc-pagination@3.1.15";
+// import Pagination from "https://cdn.skypack.dev/rc-pagination@3.1.15";
 import NewTask from "./NewTask";
 import { SVGs } from "../../../assets/svg/SVGs";
 import { Images } from "../../../assets/images/Images";
