@@ -9,7 +9,7 @@ import "./assets/css/estate.css";
 // import BuildingInfo from "./components/JoinEstate/JoinEstate3";
 // import CreateEstate from "./Pages/Authentication/Create/Create";
 // import Profile from "./components/Profile";
-// import SuperAdminOverview from "./Pages/SuperAdmin/S-Overview";
+import SuperAdminOverview from "./Pages/SuperAdmin/S-Overview";
 // import SuperAdminEstate from "./Pages/SuperAdmin/Estates/Estate";
 // import SuperAdminTask from "./Pages/SuperAdmin/Tasks/Task";
 // import ResetPassword from "./components/ResetPassword/ResetPassword";
@@ -17,7 +17,6 @@ import "./assets/css/estate.css";
 // import CreateEstate2 from "./Pages/Authentication/Create/Create2";
 
 function App() {
-  return <div className="App">Hello World</div>;
   // const [loading, setLoading] = useState(true);
   // const spinner = document.getElementById("spinner");
   // if (spinner) {
@@ -26,29 +25,29 @@ function App() {
   //     setLoading(false);
   //   }, 2000);
   // }
-  // return (
-  //   !loading && (
-  //     <>
-  //       <BrowserRouter>
-  //         <Routes>
-  //           <Route index element={<SuperAdminOverview />} />
-  //           {/* <Route path="/get-started" element={<ChooseMode />} />
-  //           <Route path="/superadmin-estate" element={<SuperAdminEstate />} />
-  //           <Route path="/superadmin-tasks" element={<SuperAdminTask />} />
-  //           <Route path="/profile" element={<Profile />} />
-  //           <Route path="/create-estate" element={<CreateEstate />} />
-  //           <Route path="/join-estate" element={<JoinEstate />} />
-  //           <Route path="/building-info" element={<BuildingInfo />} />
-  //           <Route path="/resident-info" element={<ResidentInfo />} />
-  //           <Route path="/login" element={<Login />} />
-  //           <Route path="/estate-info" element={<CreateEstate2 />} />
-  //           <Route path="/reset-password" element={<ResetPassword />} />
-  //           <Route path="/update-password" element={<UpdatePassword />} /> */}
-  //         </Routes>
-  //       </BrowserRouter>
-  //     </>
-  //   )
-  // );
+  return (
+    // !loading && (
+    <>
+      <BrowserRouter basename="/Test">
+        <Routes>
+          <Route index element={<SuperAdminOverview />} />
+          {/* <Route path="/get-started" element={<ChooseMode />} />
+            <Route path="/superadmin-estate" element={<SuperAdminEstate />} />
+            <Route path="/superadmin-tasks" element={<SuperAdminTask />} />
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/create-estate" element={<CreateEstate />} />
+            <Route path="/join-estate" element={<JoinEstate />} />
+            <Route path="/building-info" element={<BuildingInfo />} />
+            <Route path="/resident-info" element={<ResidentInfo />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/estate-info" element={<CreateEstate2 />} />
+            <Route path="/reset-password" element={<ResetPassword />} />
+            <Route path="/update-password" element={<UpdatePassword />} /> */}
+        </Routes>
+      </BrowserRouter>
+    </>
+    // )
+  );
 }
 
 export default App;
