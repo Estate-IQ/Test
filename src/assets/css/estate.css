@@ -3521,7 +3521,7 @@ footer ul.breadcrumb li a:hover {
 }
 
 .input_avatar h6 {
-  opacity: 0;
+  opacity: 0.1;
 }
 
 .search_profile {
