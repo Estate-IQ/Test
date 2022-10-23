@@ -1,0 +1,44 @@
+:root {
+  --Brand-color: #2d4bf3;
+  --TurkishRose: #bc658d;
+  --Gunmetal: #2c333a;
+  --ViridianGreen: #009ba2;
+  --White: #ffffff;
+  --Rhythm: #69779b;
+  --CaribbeanGreen: #00c5a2;
+  --OldLavender: #756c83;
+  --AmericanPurple: #432160;
+  --ChineseBlue: #415b90;
+  --DarkSlateGray: #314a52;
+  --MaximumRedPurple: #a03c78;
+  --DarkLavender: #6f539b;
+  --MetallicBlue: #3c5186;
+  --TiffanyBlue: #0fabbc;
+  --PoliceBlue: #394a6d;
+  --Corn: #fbeb5b;
+  --LimeGreen: #4be133;
+  --OldRose: #394a6d;
+  --Magnolia: #f4f3fe;
+  --ChineseSilver: #cccccc;
+  --LavenderGray: #c5c0db;
+  --Main-Gradient: linear-gradient(79.85deg, #009ba2 -20.87%, #bc658d 87.74%);
+  --blue: rgb(26, 57, 87);
+  --white: rgb(236, 236, 236);
+  --DeepGreen-CyanTurquoise: #206d62;
+
+  --Satoshi: "Satoshi", sans-serif;
+  --DM-Sans: "DM Sans", sans-serif;
+
+  --shadow: 0px -2px 8px rgba(0, 0, 0, 0.05), 0px 2px 8px rgba(0, 0, 0, 0.05);
+  --overlay: rgba(44, 51, 58, 0.2);
+}
+
+[dark-theme="dark"] {
+  --White: #2c333a;
+  --Gunmetal: #ffffff;
+  --White: #2c333a;
+}
+
+body {
+  background-color: var(--White);
+}

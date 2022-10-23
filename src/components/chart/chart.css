@@ -1,0 +1,15 @@
+.chart {
+  padding: 20px;
+  margin-bottom: 30px;
+  background: #ffffff;
+  border: 2px solid #e1e1e1;
+  border-radius: 5px;
+}
+
+.chartTitle {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: 0em;
+  text-align: left;
+}
