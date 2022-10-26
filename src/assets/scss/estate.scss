@@ -7,6 +7,7 @@ $details-color: #00a7e1;
 $font-color: #f2f6ff;
 $submit-color: #00703f;
 $submit-color-darker: #00824a;
+
 :root {
   --Brand-color: #2d4bf3;
   --TurkishRose: #bc658d;
@@ -42,6 +43,17 @@ $submit-color-darker: #00824a;
 }
 .dashboard_container {
   padding: 0 30px;
+}
+.capture_close {
+  display: flex;
+  justify-content: space-between;
+  img {
+    width: 25px;
+    height: 25px;
+  }
+  h1 {
+    margin-bottom: 30px;
+  }
 }
 .acct_info {
   display: flex;
@@ -738,6 +750,21 @@ OVERVIEW
 .modalContainer {
   max-width: 470px;
   margin: 30px auto;
+  position: relative;
+  img {
+    width: 35px;
+    top: 39px;
+    position: absolute;
+    right: 30px;
+    cursor: pointer;
+  }
+}
+.form-group {
+  button {
+    width: 100%;
+    color: #ffffff;
+    background: #2d4bf3;
+  }
 }
 .new_estates_form {
   background-color: var(--White);
@@ -1021,7 +1048,98 @@ OVERVIEW
     }
   }
 }
+.perTask {
+  background: #fffbe6;
+  border-radius: 5px;
+  padding: 15px 20px;
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+  justify-content: space-between;
+  span,
+  h4,
+  h5,
+  p {
+    margin: 0;
+  }
+  .main_drop {
+    font-family: var(--DM-Sans);
+  }
+  .caution_name {
+    display: flex;
+    img {
+      width: 40px;
+      margin-right: 15px;
+      height: 40px;
+    }
+    .c_tag {
+      span {
+        font-weight: 400;
+        font-size: 14px;
+        padding: 5px 10px;
+        background: #f2f6ff;
+        border: 1px solid #f2f6ff;
+        border-radius: 5px;
+        line-height: 16px;
+        margin-bottom: 10px !important;
+        color: #5376e5;
+      }
+      p {
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 16px;
+        display: flex;
+        align-items: center;
+        // letter-spacing: -0.06em;
+        color: #686868;
+        margin-top: 10px !important;
+        span {
+          background: none;
+          font-weight: 700;
+          font-size: 16px;
+          line-height: 16px;
+          margin-left: 10px;
+          display: flex;
+          padding: 0;
+          border: 0;
+          align-items: center;
+          color: #545454;
+          position: relative;
+          top: 7px;
+          &:before {
+            content: "";
+            display: inline-block;
+            width: 7px;
+            height: 7px;
+            margin-right: 10px;
+            border-radius: 50%;
+            background-color: #00171f;
+          }
+        }
+      }
+      h4 {
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 18px;
+        margin-top: 10px;
+        text-transform: uppercase;
 
+        color: #ef9c50;
+      }
+      h5 {
+        margin-top: 15px;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 16px;
+        display: flex;
+        align-items: center;
+        text-transform: uppercase;
+
+        color: #545454;
+      }
+    }
+  }
+}
 .call_text {
   display: flex;
   justify-content: space-between;
@@ -1032,6 +1150,9 @@ OVERVIEW
     width: 35px;
     height: 35px;
   }
+}
+.swal2-container.swal2-backdrop-show {
+  padding: 0 25px;
 }
 .swal2-styled.swal2-confirm {
   background: var(--Brand-color) !important;
@@ -1044,11 +1165,50 @@ OVERVIEW
   }
 }
 .swal2-title {
-  font-weight: 600 !important;
-  font-size: 25px !important;
-  line-height: 40px !important;
+  font-weight: 500 !important;
+  font-size: 23px !important;
+  line-height: 30px !important;
+  h4 {
+    font-size: 25px !important;
+    font-weight: 600 !important;
+  }
 }
+.all_overview {
+  margin-top: 30px;
+  margin-bottom: 20px;
+  .per_overview {
+    background-color: yellow;
+    border: 2px solid #e1e1e1;
+    border-radius: 5px;
+    background-color: var(--White);
+    padding: 15px;
+    margin-bottom: 20px;
+    > div {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 25px;
+    }
+    h3 {
+      font-size: 22px;
+      font-weight: 700;
+      line-height: 24px;
+      letter-spacing: 0em;
 
+      margin: 0;
+    }
+    p {
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 22px;
+      margin: 0;
+      letter-spacing: 0em;
+    }
+    img {
+      width: 40px;
+      height: 40px;
+    }
+  }
+}
 .creating_task {
   display: flex;
   justify-content: space-between;
@@ -1057,6 +1217,124 @@ OVERVIEW
     margin-top: 10px;
     width: 180px;
   }
+}
+.before_list {
+  padding-left: 40px;
+  &:before {
+    content: "";
+    width: 30px;
+    height: 30px;
+    top: 5px;
+    margin-right: 10px;
+    position: relative;
+    display: inline-block;
+  }
+}
+.over_view {
+  &:before {
+    content: url("../svg/overview.svg");
+  }
+}
+.est {
+  &:before {
+    content: url("../svg/est.svg");
+  }
+}
+.msg {
+  &:before {
+    content: url("../svg/msg.svg");
+  }
+}
+.tsk {
+  &:before {
+    content: url("../svg/tsk.svg");
+  }
+}
+.psm {
+  &:before {
+    content: url("../svg/psm.svg");
+  }
+}
+.comp {
+  &:before {
+    content: url("../svg/comp.svg");
+  }
+}
+.log_out {
+  &:before {
+    content: url("../svg/logoot.svg");
+  }
+}
+.loging_out {
+  position: absolute;
+  bottom: 0;
+  li {
+    width: 100%;
+    border-bottom: 0 !important;
+    color: red !important;
+    border-top: 1px solid var(--Magnolia) !important;
+  }
+}
+
+.subscription {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  .ff_side {
+    h1 {
+      font-size: 28px;
+      font-weight: 700;
+      line-height: 36px;
+      letter-spacing: 0em;
+      text-align: left;
+    }
+    p {
+      color: #5376e5;
+    }
+  }
+}
+.each_package {
+  padding: 20px;
+  border: 2px solid #c0c0c0;
+  display: flex;
+  border-radius: 5px;
+  // margin-top: 30px;
+  img {
+    width: 40px;
+    height: 40px;
+    margin-right: 20px;
+  }
+  .package_name {
+    h3 {
+      font-weight: 700;
+      font-size: 22px;
+      margin-bottom: 10px;
+      line-height: 24px;
+    }
+    p {
+      margin: 0;
+    }
+    h4 {
+      font-weight: 700;
+      font-size: 18px;
+      line-height: 18px;
+      margin-top: 5px;
+    }
+    .inline {
+      margin-top: 30px;
+      .edit {
+        margin-right: 10px;
+        color: var(--Brand-color);
+      }
+      .delete {
+        margin-right: 10px;
+        color: red;
+      }
+    }
+  }
+}
+.control_package {
+  margin-top: 30px;
 }
 @media (max-width: 400px) {
   .latest_estate .new_estates {
@@ -1073,6 +1351,9 @@ OVERVIEW
 @media (max-width: 540px) {
   .acct_info .create_img {
     display: none;
+  }
+  .perTask .main_drop {
+    margin-top: 30px;
   }
   .with_blue {
     margin-top: 25px;
@@ -1115,10 +1396,11 @@ OVERVIEW
     justify-content: space-between;
     flex-wrap: wrap;
     .grid-row {
-      margin-bottom: 25px;
+      margin-bottom: 20px;
       width: 47%;
     }
   }
+
   .estate_cards {
     display: flex;
     justify-content: space-between;
@@ -1145,42 +1427,6 @@ OVERVIEW
     width: 100% !important;
   }
 }
-.all_overview {
-  margin-top: 30px;
-  margin-bottom: 20px;
-  .per_overview {
-    background-color: yellow;
-    border: 2px solid #e1e1e1;
-    border-radius: 5px;
-    background-color: var(--White);
-    padding: 15px;
-    margin-bottom: 20px;
-    > div {
-      display: flex;
-      justify-content: space-between;
-      margin-top: 25px;
-    }
-    h3 {
-      font-size: 22px;
-      font-weight: 700;
-      line-height: 24px;
-      letter-spacing: 0em;
-
-      margin: 0;
-    }
-    p {
-      font-size: 20px;
-      font-weight: 400;
-      line-height: 22px;
-      margin: 0;
-      letter-spacing: 0em;
-    }
-    img {
-      width: 40px;
-      height: 40px;
-    }
-  }
-}
 @media (max-width: 890px) {
   .acct_info .create_bg .create_est form {
     position: absolute;
@@ -1205,7 +1451,6 @@ OVERVIEW
     margin-top: 25px;
   }
 }
-
 @media (max-width: 1024px) {
   .control_view .desktop_nav h4 {
     display: none;
@@ -1235,7 +1480,6 @@ OVERVIEW
     }
   }
 }
-
 @media (min-width: 540px) {
   .group_profile .Cap_estate_name .resident_data {
     display: flex;
@@ -1310,7 +1554,7 @@ OVERVIEW
 @media (min-width: 1200px) {
   .fourcard_grid {
     .grid-row {
-      width: 23.5%;
+      width: 24%;
     }
   }
   .group_profile {
@@ -1381,9 +1625,9 @@ OVERVIEW
   }
 }
 /**
- * ----------------------------------------
+ * -----------------------
  * animation slide-in-top
- * ----------------------------------------
+ * ----------------------
  */
 @-webkit-keyframes slide-in-top {
   0% {

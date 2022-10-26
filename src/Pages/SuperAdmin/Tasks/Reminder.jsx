@@ -11,11 +11,9 @@ class MasterForm extends React.Component {
     this.state = {
       currentStep: 1,
       title: "",
-      fileName: "",
+      date: "",
+      time: "",
       description: "",
-      ad_email: "",
-      ad_web: "",
-      mobile: "",
     };
   }
 
@@ -30,7 +28,7 @@ class MasterForm extends React.Component {
     event.preventDefault();
     const { title, description, fileName } = this.state;
     Swal.fire({
-      title: `<div>You just placed an advert that you called <h4> ${title}</h4> </div>`,
+      title: `<div>A Remider has been created to <h4> ${title}</h4> </div>`,
       icon: "success",
       showConfirmButton: true,
       showCloseButton: true,
@@ -93,7 +91,7 @@ class MasterForm extends React.Component {
           // action="/profile"
           className="new_estates_form scale-up-center"
         >
-          <p>Step {this.state.currentStep} of 2</p>
+          {/* <p>Step {this.state.currentStep} of 2</p> */}
           {/* 
           render the form steps and pass required props in
         */}
@@ -102,22 +100,9 @@ class MasterForm extends React.Component {
             handleChange={this.handleChange}
             title={this.state.title}
             description={this.state.description}
+            date={this.state.date}
+            time={this.state.time}
           />
-
-          <Step2
-            currentStep={this.state.currentStep}
-            handleChange={this.handleChange}
-            description={this.state.description}
-          />
-          {/* <Step3
-            currentStep={this.state.currentStep}
-            handleChange={this.handleChange}
-            password={this.state.password}
-          /> */}
-          <div className="control_btn">
-            {this.previousButton()}
-            {this.nextButton()}
-          </div>
         </form>
       </React.Fragment>
     );
@@ -135,18 +120,9 @@ function Step1(props) {
       <div className="create_est ">
         <div className="form_txt">
           <div className="capture_close">
-            <h1>Advert</h1>
+            <h1>Reminder</h1>
           </div>
         </div>
-
-        <input
-          type="file"
-          id="fileName"
-          value={props.fileName}
-          onChange={props.handleChange}
-          name="fileName"
-          placeholder="Title"
-        />
 
         <input
           type="text"
@@ -154,8 +130,9 @@ function Step1(props) {
           value={props.title}
           onChange={props.handleChange}
           name="title"
-          placeholder="Title"
+          placeholder="Remind Me to ..."
         />
+
         <textarea
           id="description"
           name="description"
@@ -163,79 +140,25 @@ function Step1(props) {
           onChange={props.handleChange}
           placeholder="Description"
         ></textarea>
+        <input
+          type="date"
+          id="date"
+          value={props.date}
+          onChange={props.handleChange}
+          name="date"
+        />
+        <input
+          type="time"
+          id="time"
+          value={props.time}
+          onChange={props.handleChange}
+          name="time"
+        />
       </div>
+      <button>Create Reminder</button>
     </div>
   );
 }
-
-function Step2(props) {
-  if (props.currentStep !== 2) {
-    return null;
-  }
-  return (
-    <div className="form-group">
-      <div className="create_est ">
-        <div className="form_txt">
-          <h1>Advert</h1>
-          <h4>Advert Info</h4>
-        </div>
-
-        <input
-          type="email"
-          id="ad_email"
-          name="ad_email"
-          placeholder="Email (Optional)"
-          value={props.title}
-          onChange={props.handleChange}
-        />
-        <input
-          type="website"
-          id="ad_web"
-          name="ad_web"
-          placeholder="Website (Optional)"
-          value={props.title}
-          onChange={props.handleChange}
-        />
-        <input
-          type="number"
-          id="mobile"
-          name="mobile"
-          placeholder="Mobile (Optional)"
-          value={props.title}
-          onChange={props.handleChange}
-        />
-      </div>
-      <button>Create Estate</button>
-    </div>
-  );
-}
-
-const returnSuccessMessage = ({ open, onClose }) => {
-  // if (!open) return null;
-  return (
-    <div onClick={onClose} className="bills_on_me">
-      {/* ===========
-      SUCESS MESSAGE
-      ============== */}
-      <div
-        className="success_message slide-in-top"
-        onClick={(e) => {
-          e.stopPropagation();
-        }}
-      >
-        <p>
-          Your have successfully added a new Estate.
-          <span>You can check your Estate list to see them</span>
-        </p>
-        <Link to="/profile">
-          <button onClick={onClose} className="important-btn">
-            View
-          </button>
-        </Link>
-      </div>
-    </div>
-  );
-};
 
 const Modal = ({ open, onClose }) => {
   if (!open) return null;

@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 // import JSON from "./Data.json";
-// import Pagination from "https://cdn.skypack.dev/rc-pagination@3.1.15";
+// import Pagination from "rc-pagination";
 import NewTask from "./NewTask";
 import { SVGs } from "../../../assets/svg/SVGs";
 import { Images } from "../../../assets/images/Images";
 import GNavbar from "../../../components/Navbar/DesktopTab";
 import Mobile from "../../../components/Navbar/Navbar";
 import { Link } from "react-router-dom";
+import AllTask from "../../../components/Tasks/AllTask";
 // import TopNav from "../../../components/Navbar/TopNav";
 
 const Estate = () => {
@@ -19,46 +20,46 @@ const Estate = () => {
   //   // SEARCH INPUT
   const [searchInput, setSearchInput] = useState("");
   //   // ======STATES FOR PAGINATION
-  //   const datatableUsers = JSON;
-  //   const [perPage, setPerPage] = useState(8);
-  //   const [size, setSize] = useState(perPage);
-  //   const [current, setCurrent] = useState(1);
+  const datatableUsers = JSON;
+  const [perPage, setPerPage] = useState(8);
+  const [size, setSize] = useState(perPage);
+  const [current, setCurrent] = useState(1);
 
-  //   const PerPageChange = (value) => {
-  //     setSize(value);
-  //     const newPerPage = Math.ceil(datatableUsers.length / value);
-  //     if (current > newPerPage) {
-  //       setCurrent(newPerPage);
-  //     }
-  //   };
+  const PerPageChange = (value) => {
+    setSize(value);
+    const newPerPage = Math.ceil(datatableUsers.length / value);
+    if (current > newPerPage) {
+      setCurrent(newPerPage);
+    }
+  };
 
-  //   const getData = (current, pageSize) => {
-  //     // Normally you should get the data from the server
-  //     return datatableUsers.slice((current - 1) * pageSize, current * pageSize);
-  //   };
+  const getData = (current, pageSize) => {
+    // Normally you should get the data from the server
+    return datatableUsers.slice((current - 1) * pageSize, current * pageSize);
+  };
 
-  //   const PaginationChange = (page, pageSize) => {
-  //     setCurrent(page);
-  //     setSize(pageSize);
-  //   };
+  const PaginationChange = (page, pageSize) => {
+    setCurrent(page);
+    setSize(pageSize);
+  };
 
-  //   const PrevNextArrow = (current, type, originalElement) => {
-  //     if (type === "prev") {
-  //       return (
-  //         <button>
-  //           <i className="fa fa-angle-double-left"></i>
-  //         </button>
-  //       );
-  //     }
-  //     if (type === "next") {
-  //       return (
-  //         <button>
-  //           <i className="fa fa-angle-double-right"></i>
-  //         </button>
-  //       );
-  //     }
-  //     return originalElement;
-  //   };
+  const PrevNextArrow = (current, type, originalElement) => {
+    if (type === "prev") {
+      return (
+        <button>
+          <i className="fa fa-angle-double-left"></i>
+        </button>
+      );
+    }
+    if (type === "next") {
+      return (
+        <button>
+          <i className="fa fa-angle-double-right"></i>
+        </button>
+      );
+    }
+    return originalElement;
+  };
 
   return (
     <section className="change_ratio">
@@ -122,7 +123,7 @@ const Estate = () => {
             {/* RESULT FROM TAB */}
             <div className="panels flex_2">
               <div className={`panel ${checkActive(1, "active")}`}>
-                <h2>Hi</h2>
+                <AllTask />
               </div>
 
               <div className={`panel ${checkActive(2, "active")}`}>

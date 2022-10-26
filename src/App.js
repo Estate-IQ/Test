@@ -12,6 +12,7 @@ import Profile from "./components/Profile";
 import SuperAdminOverview from "./Pages/SuperAdmin/S-Overview";
 import SuperAdminEstate from "./Pages/SuperAdmin/Estates/Estate";
 import SuperAdminTask from "./Pages/SuperAdmin/Tasks/Task";
+import SuperAdminPermission from "./Pages/SuperAdmin/Permissions/Permission";
 import ResetPassword from "./components/ResetPassword/ResetPassword";
 import UpdatePassword from "./components/ResetPassword/ResetPassword2";
 import CreateEstate2 from "./Pages/Authentication/Create/Create2";
@@ -28,12 +29,16 @@ function App() {
   return (
     // !loading && (
     <>
-      <BrowserRouter basename="/Test">
+      <BrowserRouter basename="/estate-iq">
         <Routes>
           <Route index element={<SuperAdminOverview />} />
           <Route path="/get-started" element={<ChooseMode />} />
           <Route path="/superadmin-estate" element={<SuperAdminEstate />} />
           <Route path="/superadmin-tasks" element={<SuperAdminTask />} />
+          <Route
+            path="/superadmin-permission"
+            element={<SuperAdminPermission />}
+          />
           <Route path="/profile" element={<Profile />} />
           <Route path="/create-estate" element={<CreateEstate />} />
           <Route path="/join-estate" element={<JoinEstate />} />

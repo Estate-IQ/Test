@@ -7,6 +7,8 @@ import { SVGs } from "../../assets/svg/SVGs";
 const Ul = styled.ul`
   list-style: none;
   display: flex;
+  position: relative;
+  height: 100%;
   flex-flow: row nowrap;
   z-index: 10;
   li {
@@ -47,37 +49,48 @@ const Ul = styled.ul`
 const RightNav = ({ open }) => {
   return (
     <Ul open={open}>
-      <div className="search_profile">
-        <div className="violet">
-          <div className="user_mode">
-            <img src={Images.img1} alt="" />
-            <div>
-              <h3>Oladokun Moses</h3>
-              <p>Super Admin</p>
+      <div
+        className="class_relative"
+        style={{ position: "relative", height: "95%" }}
+      >
+        <div className="search_profile">
+          <div className="violet">
+            <div className="user_mode">
+              <img src={Images.img1} alt="" />
+              <div>
+                <h3>Oladokun Moses</h3>
+                <p>Super Admin</p>
+              </div>
             </div>
           </div>
-        </div>
 
-        {/* <input type="text" placeholder="Search" /> */}
+          {/* <input type="text" placeholder="Search" /> */}
+        </div>
+        <Link to="/">
+          <li className="before_list over_view">Overview</li>
+        </Link>
+        <Link to="/superadmin-estate">
+          <li className="before_list est">Estates</li>
+        </Link>
+        <Link to="" style={{ opacity: "0.4" }}>
+          <li className="before_list msg">Messages</li>
+        </Link>
+        <Link to="/superadmin-tasks">
+          <li className="before_list tsk">Task</li>
+        </Link>
+        <Link to="/superadmin-permission">
+          <li className="before_list psm">Permission</li>
+        </Link>
+        <Link to="/">
+          <li className="before_list comp">Complaints</li>
+        </Link>
+
+        <div className="loging_out">
+          <Link to="/get-started">
+            <li className="before_list log_out">Logout</li>
+          </Link>
+        </div>
       </div>
-      <Link to="/">
-        <li>Overview</li>
-      </Link>
-      <Link to="/superadmin-estate">
-        <li>Estates</li>
-      </Link>
-      <Link to="">
-        <li>Messages</li>
-      </Link>
-      <Link to="/superadmin-tasks">
-        <li>Task</li>
-      </Link>
-      <Link to="/">
-        <li>Permission</li>
-      </Link>
-      <Link to="/">
-        <li>Complaints</li>
-      </Link>
     </Ul>
   );
 };

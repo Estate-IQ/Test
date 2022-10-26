@@ -177,7 +177,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: var(--DM-Sans);
+  font-family: var(--Satoshi);
   color: var(--Gunmetal);
   font-weight: 500;
   line-height: 110%;
@@ -241,7 +241,7 @@ hr {
 }
 
 ul li {
-  font-family: var(--Satoshi);
+  font-family: var(--DM-Sans);
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
@@ -309,7 +309,7 @@ ol li:before {
 p,
 span,
 li {
-  font-family: var(--Satoshi);
+  font-family: var(--DM-Sans);
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
@@ -2235,6 +2235,7 @@ input:valid {
   -webkit-box-pack: center !important;
       -ms-flex-pack: center !important;
           justify-content: center !important;
+  margin-bottom: 50px !important;
 }
 
 .rc-pagination-item,
@@ -2380,6 +2381,7 @@ input:valid {
   background-color: #fff;
   position: absolute;
   top: 52px;
+  z-index: 11;
   border: 1px solid var(--Magnolia);
   width: 100%;
 }
@@ -3549,7 +3551,7 @@ textarea {
   width: 100%;
   max-width: 100%;
   padding: 15px;
-  margin-top: 20px;
+  margin-bottom: 10px;
   border: 1px solid rgba(44, 51, 58, 0.5);
   border-radius: 5px;
   outline: none;

@@ -2,6 +2,8 @@ export const SVGs = {
   brand_name: require("../svg/brand_name.svg").default,
   brand_logo: require("../svg/brand_logo.svg").default,
   email: require("../svg/location.svg").default,
+  close: require("../svg/close.svg").default,
+  caution: require("../svg/caution.svg").default,
   location: require("../svg/location.svg").default,
   overview_svg: require("../svg/estates_svg.svg").default,
   phone: require("../svg/phone.svg").default,
@@ -48,4 +50,8 @@ export const SVGs = {
   plane: require("../svg/plane.svg").default,
   workstation: require("../svg/workstation.svg").default,
   team: require("../svg/team.svg").default,
+  freePlan: require("../svg/free.svg").default,
+  essentialPlan: require("../svg/essential.svg").default,
+  standardPlan: require("../svg/standard.svg").default,
+  premiumPlan: require("../svg/premium.svg").default,
 };

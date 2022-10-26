@@ -1,10 +1,13 @@
 import React from "react";
 import { useState } from "react";
-import Modal from "./Advert";
-// import Modal from "./Advert";
+import Advert from "./Advert";
+import Reminder from "./Reminder";
+import Announcement from "../../SuperAdmin/Tasks/Announce/Announce";
 
 const SelectDrop = ({ selected, setSelected }) => {
   const [openModal, setOpenModal] = useState(false);
+  const [reminder, setReminder] = useState(false);
+  const [announce, setAnnouncement] = useState(false);
   const [isActive, setIsActive] = useState(false);
 
   return (
@@ -45,22 +48,27 @@ const SelectDrop = ({ selected, setSelected }) => {
             className="select_items"
             onClick={(e) => {
               setSelected("Announcement");
-              setIsActive(false);
+              setIsActive(true);
             }}
           >
-            <p>Announcement</p>
+            <p onClick={() => setAnnouncement(true)}>Announcement</p>
           </div>
           {/* Reminder */}
           <div
             className="select_items"
             onClick={(e) => {
               setSelected("Reminder");
-              setIsActive(false);
+              setIsActive(true);
             }}
           >
-            <p>Reminder</p>
+            <p onClick={() => setReminder(true)}>Reminder</p>
           </div>
-          <Modal open={openModal} onClose={() => setOpenModal(false)} />
+          <Advert open={openModal} onClose={() => setOpenModal(false)} />
+          <Reminder open={reminder} onClose={() => setReminder(false)} />
+          <Announcement
+            open={announce}
+            onClose={() => setAnnouncement(false)}
+          />
         </div>
       )}
     </div>

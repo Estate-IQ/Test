@@ -1,6 +1,7 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
+import { SVGs } from "../../../assets/svg/SVGs";
 import States from "../../../components/States/State";
 import LGAs from "../../../components/States/State";
 
@@ -10,11 +11,12 @@ class MasterForm extends React.Component {
     this.state = {
       currentStep: 1,
       email: "",
-      username: "",
       password: "",
-      first_name: "",
-      last_name: "",
-      estate_email: "",
+      firstName: "",
+      lastName: "",
+      mobile: "",
+      emailId: "",
+      state: "",
     };
   }
 
@@ -27,21 +29,25 @@ class MasterForm extends React.Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    const { email, username, password } = this.state;
+    const { email, firstName, password, state } = this.state;
+    // alert(`Your registration detail: \n
+    // Email: ${email} \n
+    // Username: ${firstName} \n
+    // Username:  ${state} \n
+    // Password: ${password}\n
+    // `);
     Swal.fire({
-      title: `<div className="control_dialog"><h1>${username}</h1> ,You just created an estate with the email ${email} and your password is ${password}</div>`,
+      title: `<h1>${firstName},</h1>You just created an estate with the email <h4> ${email} </h4> and your password is ${state} ${password}</div>`,
       icon: "success",
       showConfirmButton: true,
       showCloseButton: true,
-    }).then(function () {
-      window.location = "/Test/profile";
     });
-    // alert(`Your registration detail: \n
-    //          Email: ${email} \n
-    //          Username: ${username} \n
-    //          Password: ${password}`);
 
     // useNavigate("/profile", { replace: true });
+
+    // .then(function () {
+    //   window.location = "/Test/profile";
+    // });
   };
 
   _next = () => {
@@ -97,24 +103,24 @@ class MasterForm extends React.Component {
           className="new_estates_form scale-up-center"
         >
           <p>Step {this.state.currentStep} of 2</p>
-          {/* 
-          render the form steps and pass required props in
-        */}
+
           <Step1
             currentStep={this.state.currentStep}
             handleChange={this.handleChange}
             email={this.state.email}
+            firstName={this.state.firstName}
+            lastName={this.state.lastName}
+            password={this.state.password}
+            mobile={this.state.mobile}
           />
           <Step2
             currentStep={this.state.currentStep}
             handleChange={this.handleChange}
-            username={this.state.username}
+            estate_email={this.state.estate_email}
+            emailId={this.state.emailId}
+            estate_ads={this.state.estate_ads}
+            estateName={this.state.estateName}
           />
-          {/* <Step3
-            currentStep={this.state.currentStep}
-            handleChange={this.handleChange}
-            password={this.state.password}
-          /> */}
           <div className="control_btn">
             {this.previousButton()}
             {this.nextButton()}
@@ -131,8 +137,6 @@ function Step1(props) {
   }
   return (
     <div className="form-group">
-      {/* <label htmlFor="email">Email address</label> */}
-
       <div className="create_est ">
         <div className="form_txt">
           <h1>Create Estate</h1>
@@ -140,13 +144,20 @@ function Step1(props) {
         </div>
         <input
           type="text"
-          id="username"
-          value={props.first_name}
+          id="firstName"
+          value={props.firstName}
           onChange={props.handleChange}
-          name="username"
+          name="firstName"
           placeholder="First Name"
         />
-        <input type="text" placeholder="Last Name" />
+        <input
+          type="text"
+          placeholder="Last Name"
+          id="lastName"
+          value={props.lastName}
+          onChange={props.handleChange}
+          name="lastName"
+        />
         <input
           type="email"
           id="email"
@@ -156,7 +167,14 @@ function Step1(props) {
           onChange={props.handleChange}
           required
         />
-        <input type="number" placeholder="Mobile" />
+        <input
+          type="number"
+          id="mobile"
+          name="mobile"
+          placeholder="Mobile"
+          value={props.mobile}
+          onChange={props.handleChange}
+        />
         <input
           id="password"
           name="password"
@@ -184,36 +202,46 @@ function Step2(props) {
   }
   return (
     <div className="form-group">
-      {/* <label htmlFor="username">Username</label>
-      <input
-        className="form-control"
-        id="username"
-        name="username"
-        type="text"
-        placeholder="Enter username"
-        value={props.username}
-        onChange={props.handleChange}
-      /> */}
-
       <div className="create_est ">
         <div className="form_txt">
           <h1>Create Estate</h1>
           <h4>Estate info</h4>
         </div>
-        <input type="text" placeholder="Estate Name" />
-        <input type="text" placeholder="Estate Address" />
+        <input
+          type="text"
+          id="estateName"
+          name="estateName"
+          placeholder="Estate Name"
+          value={props.estateName}
+          onChange={props.handleChange}
+        />
+        <input
+          type="text"
+          id="estate_ads"
+          name="estate_ads"
+          placeholder="Estate Address"
+          value={props.estate_email}
+          onChange={props.handleChange}
+        />
         <input
           type="email"
           id="estate_email"
           name="estate_email"
-          placeholder="Estate Email"
-          value={props.email}
+          placeholder="Estate Email *"
+          value={props.estate_email}
           onChange={props.handleChange}
           required
         />
-        <input type="text" placeholder="Estate ID" />
+        <input
+          type="text"
+          id="emailId"
+          name="emailId"
+          placeholder="Estate ID"
+          value={props.emailId}
+          onChange={props.handleChange}
+        />
         <div className="double_input">
-          <States />
+          <States name="emailId" placeholder="Estate ID" />
           <LGAs />
         </div>
       </div>
@@ -258,25 +286,6 @@ const Modal = ({ open, onClose }) => {
   if (!open) return null;
   return (
     <div onClick={onClose} className="bills_on_me">
-      {/* ===========
-      SUCESS MESSAGE
-      ============== */}
-      {/* <div
-        className="success_message slide-in-top"
-        onClick={(e) => {
-          e.stopPropagation();
-        }}
-      >
-        <p>
-          Your have successfully added a new Estate.
-          <span>You can check your Estate list to see them</span>
-        </p>
-        <Link to="/profile">
-          <button onClick={onClose} className="important-btn">
-            View
-          </button>
-        </Link>
-      </div> */}
       <div
         onClick={(e) => {
           e.stopPropagation();
@@ -284,6 +293,7 @@ const Modal = ({ open, onClose }) => {
         className="modalContainer"
       >
         <MasterForm />
+        <img src={SVGs.close} alt="" onClick={onClose} />
       </div>
     </div>
   );

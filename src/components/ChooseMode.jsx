@@ -83,11 +83,12 @@ const ChooseMode = () => {
                   value="no"
                   name="ChooseMode"
                   id="JoinEstate"
+                  checked
                 />
                 <label
                   htmlFor="JoinEstate"
                   className="dispatch_svg"
-                  onClick={() => setSelectedPath("/female")}
+                  // onClick={() => setSelectedPath("/female")}
                 >
                   <div className="svg">
                     <svg
@@ -129,9 +130,7 @@ const ChooseMode = () => {
               </div>
             </div>
             <Link to="/join-estate">
-              <button className="important-btn" onClick={handleButtonClick}>
-                Create Account
-              </button>
+              <button className="important-btn">Create Account</button>
             </Link>
           </form>
         </div>

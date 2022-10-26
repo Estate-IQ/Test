@@ -108,7 +108,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: var(--DM-Sans);
+  font-family: var(--Satoshi);
   color: var(--Gunmetal);
   font-weight: 500;
   line-height: 110%;
@@ -152,7 +152,7 @@ h5 {
 }
 
 @mixin p {
-  font-family: var(--Satoshi);
+  font-family: var(--DM-Sans);
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
@@ -1875,6 +1875,7 @@ input:valid {
   display: flex;
   align-items: center;
   justify-content: center !important;
+  margin-bottom: 50px !important;
 }
 .rc-pagination-item,
 .rc-pagination-prev,
@@ -2000,6 +2001,7 @@ input:valid {
     background-color: #fff;
     position: absolute;
     top: 52px;
+    z-index: 11;
     border: 1px solid var(--Magnolia);
     width: 100%;
     .selected {
