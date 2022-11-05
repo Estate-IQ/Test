@@ -1,13 +1,82 @@
-[
+import react, { useState } from "react";
+
+// let data = require("./States.json");
+
+export default function App(props) {
+  const [value, setValue] = useState("");
+
+  const onChange = (event) => {
+    setValue(event.target.value);
+  };
+
+  const onSearch = (searchTerm) => {
+    setValue(searchTerm);
+    props.handleSearch(searchTerm);
+    // our api to fetch the search result
+    console.log("search ", searchTerm);
+  };
+
+  return (
+    <div className="">
+      <div className="custom_search">
+        <div className="search-inner">
+          <input
+            type="text"
+            value={value}
+            onChange={onChange}
+            placeholder="State"
+          />
+          {/* <button onClick={() => onSearch(value)}> Search </button> */}
+        </div>
+        <div className="search_result">
+          {data
+            .filter((item) => {
+              const searchTerm = value.toLowerCase();
+              const fullName = item.estate.toLowerCase();
+
+              return (
+                searchTerm &&
+                fullName.startsWith(searchTerm) &&
+                fullName !== searchTerm
+              );
+            })
+            .slice(0, 10)
+            .map((item) => (
+              <div
+                onClick={() => onSearch(item.estate)}
+                className="drop_items"
+                key={item.estate}
+              >
+                {item.estate}
+              </div>
+            ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// let data = useFetch("https://jsonplaceholder.typicode.com/posts");
+
+// fetch(data)
+//   .then((response) => {
+//     return response.json();
+//   })
+//   .then((d) => {
+//     this.setState({ clouds: d });
+//     console.log("state", this.state.clouds);
+//   })
+//   .catch((error) => console.log(error));
+let data = [
   {
-    "code": "FC",
-    "value": "Abuja",
-    "lgas": ["Abuja", "Kwali", "Kuje", "Gwagwalada", "Bwari", "Abaji"]
+    code: "FC",
+    estate: "Abuja",
+    lgas: ["Abuja", "Kwali", "Kuje", "Gwagwalada", "Bwari", "Abaji"],
   },
   {
-    "code": "AB",
-    "value": "Abia",
-    "lgas": [
+    code: "AB",
+    estate: "Abia",
+    lgas: [
       "Aba North",
       "Aba South",
       "Arochukwu",
@@ -27,13 +96,13 @@
       "Ukwa West",
       "Ukwa East",
       "Umuahia North",
-      "Umuahia South"
-    ]
+      "Umuahia South",
+    ],
   },
   {
-    "code": "AD",
-    "value": "Adamawa",
-    "lgas": [
+    code: "AD",
+    estate: "Adamawa",
+    lgas: [
       "Demsa",
       "Fufore",
       "Ganye",
@@ -54,13 +123,13 @@
       "Song",
       "Toungo",
       "Yola North",
-      "Yola South"
-    ]
+      "Yola South",
+    ],
   },
   {
-    "code": "AK",
-    "value": "AkwaIbom",
-    "lgas": [
+    code: "AK",
+    estate: "AkwaIbom",
+    lgas: [
       "Abak",
       "Eastern-Obolo",
       "Eket",
@@ -91,13 +160,13 @@
       "Ukanafun",
       "Urue-Offong/Oruko",
       "Uruan",
-      "Uyo"
-    ]
+      "Uyo",
+    ],
   },
   {
-    "code": "AN",
-    "value": "Anambra",
-    "lgas": [
+    code: "AN",
+    estate: "Anambra",
+    lgas: [
       "Aguata",
       "Anambra East",
       "Anambra West",
@@ -117,13 +186,13 @@
       "Onitsha-North",
       "Onitsha-South",
       "Orumba-North",
-      "Orumba-South"
-    ]
+      "Orumba-South",
+    ],
   },
   {
-    "code": "BA",
-    "value": "Bauchi",
-    "lgas": [
+    code: "BA",
+    estate: "Bauchi",
+    lgas: [
       "Alkaleri",
       "Bauchi",
       "Bogoro",
@@ -143,13 +212,13 @@
       "Tafawa-Balewa",
       "Toro",
       "Warji",
-      "Zaki"
-    ]
+      "Zaki",
+    ],
   },
   {
-    "code": "BY",
-    "value": "Bayelsa",
-    "lgas": [
+    code: "BY",
+    estate: "Bayelsa",
+    lgas: [
       "Brass",
       "Ekeremor",
       "Kolokuma Opokuma",
@@ -157,13 +226,13 @@
       "Ogbia",
       "Sagbama",
       "Southern-Ijaw",
-      "Yenagoa"
-    ]
+      "Yenagoa",
+    ],
   },
   {
-    "code": "BE",
-    "value": "Benue",
-    "lgas": [
+    code: "BE",
+    estate: "Benue",
+    lgas: [
       "Ado",
       "Agatu",
       "Apa",
@@ -185,13 +254,13 @@
       "Tarka",
       "Ukum",
       "Ushongo",
-      "Vandeikya"
-    ]
+      "Vandeikya",
+    ],
   },
   {
-    "code": "BO",
-    "value": "Borno",
-    "lgas": [
+    code: "BO",
+    estate: "Borno",
+    lgas: [
       "Abadam",
       "Askira-Uba",
       "Bama",
@@ -218,13 +287,13 @@
       "Monguno",
       "Ngala",
       "Nganzai",
-      "Shani"
-    ]
+      "Shani",
+    ],
   },
   {
-    "code": "CR",
-    "value": "CrossRiver",
-    "lgas": [
+    code: "CR",
+    estate: "CrossRiver",
+    lgas: [
       "Abi",
       "Akamkpa",
       "Akpabuyo",
@@ -242,13 +311,13 @@
       "Odukpani",
       "Ogoja",
       "Yakurr",
-      "Yala"
-    ]
+      "Yala",
+    ],
   },
   {
-    "code": "DE",
-    "value": "Delta",
-    "lgas": [
+    code: "DE",
+    estate: "Delta",
+    lgas: [
       "Aniocha North",
       "Aniocha-North",
       "Aniocha-South",
@@ -274,13 +343,13 @@
       "Uvwie",
       "Warri South-West",
       "Warri North",
-      "Warri South"
-    ]
+      "Warri South",
+    ],
   },
   {
-    "code": "EB",
-    "value": "Ebonyi",
-    "lgas": [
+    code: "EB",
+    estate: "Ebonyi",
+    lgas: [
       "Abakaliki",
       "Afikpo-North",
       "Afikpo South (Edda)",
@@ -292,13 +361,13 @@
       "Ivo",
       "Izzi",
       "Ohaukwu",
-      "Onicha"
-    ]
+      "Onicha",
+    ],
   },
   {
-    "code": "ED",
-    "value": "Edo",
-    "lgas": [
+    code: "ED",
+    estate: "Edo",
+    lgas: [
       "Akoko Edo",
       "Egor",
       "Esan-Central",
@@ -316,13 +385,13 @@
       "Ovia-South-West",
       "Owan East",
       "Owan-West",
-      "Uhunmwonde"
-    ]
+      "Uhunmwonde",
+    ],
   },
   {
-    "code": "EK",
-    "value": "Ekiti",
-    "lgas": [
+    code: "EK",
+    estate: "Ekiti",
+    lgas: [
       "Ado-Ekiti",
       "Efon",
       "Ekiti-East",
@@ -338,13 +407,13 @@
       "Irepodun Ifelodun",
       "Ise-Orun",
       "Moba",
-      "Oye"
-    ]
+      "Oye",
+    ],
   },
   {
-    "code": "EN",
-    "value": "Enugu",
-    "lgas": [
+    code: "EN",
+    estate: "Enugu",
+    lgas: [
       "Aninri",
       "Awgu",
       "Enugu-East",
@@ -361,13 +430,13 @@
       "Oji-River",
       "Udenu",
       "Udi",
-      "Uzo-Uwani"
-    ]
+      "Uzo-Uwani",
+    ],
   },
   {
-    "code": "GO",
-    "value": "Gombe",
-    "lgas": [
+    code: "GO",
+    estate: "Gombe",
+    lgas: [
       "Akko",
       "Balanga",
       "Billiri",
@@ -378,13 +447,13 @@
       "Kwami",
       "Nafada",
       "Shongom",
-      "Yamaltu Deba"
-    ]
+      "Yamaltu Deba",
+    ],
   },
   {
-    "code": "IM",
-    "value": "Imo",
-    "lgas": [
+    code: "IM",
+    estate: "Imo",
+    lgas: [
       "Aboh-Mbaise",
       "Ahiazu-Mbaise",
       "Ehime-Mbano",
@@ -411,13 +480,13 @@
       "Oru-West",
       "Owerri-Municipal",
       "Owerri-North",
-      "Owerri-West"
-    ]
+      "Owerri-West",
+    ],
   },
   {
-    "code": "JI",
-    "value": "Jigawa",
-    "lgas": [
+    code: "JI",
+    estate: "Jigawa",
+    lgas: [
       "Auyo",
       "Babura",
       "Biriniwa",
@@ -443,13 +512,13 @@
       "Roni",
       "Sule-Tankarkar",
       "Taura",
-      "Yankwashi"
-    ]
+      "Yankwashi",
+    ],
   },
   {
-    "code": "KD",
-    "value": "Kaduna",
-    "lgas": [
+    code: "KD",
+    estate: "Kaduna",
+    lgas: [
       "Birnin-Gwari",
       "Chikun",
       "Giwa",
@@ -472,13 +541,13 @@
       "Sanga",
       "Soba",
       "Zangon-Kataf",
-      "Zaria"
-    ]
+      "Zaria",
+    ],
   },
   {
-    "code": "KN",
-    "value": "Kano",
-    "lgas": [
+    code: "KN",
+    estate: "Kano",
+    lgas: [
       "Ajingi",
       "Albasu",
       "Bagwai",
@@ -522,13 +591,13 @@
       "Tudun-Wada",
       "Ungogo",
       "Warawa",
-      "Wudil"
-    ]
+      "Wudil",
+    ],
   },
   {
-    "code": "KT",
-    "value": "Katsina",
-    "lgas": [
+    code: "KT",
+    estate: "Katsina",
+    lgas: [
       "Bakori",
       "Batagarawa",
       "Batsari",
@@ -562,13 +631,13 @@
       "Sabuwa",
       "Safana",
       "Sandamu",
-      "Zango"
-    ]
+      "Zango",
+    ],
   },
   {
-    "code": "KE",
-    "value": "Kebbi",
-    "lgas": [
+    code: "KE",
+    estate: "Kebbi",
+    lgas: [
       "Aleiro",
       "Arewa-Dandi",
       "Argungu",
@@ -589,13 +658,13 @@
       "Suru",
       "Wasagu/Danko",
       "Yauri",
-      "Zuru"
-    ]
+      "Zuru",
+    ],
   },
   {
-    "code": "KO",
-    "value": "Kogi",
-    "lgas": [
+    code: "KO",
+    estate: "Kogi",
+    lgas: [
       "Adavi",
       "Ajaokuta",
       "Ankpa",
@@ -616,13 +685,13 @@
       "Omala",
       "Oyi",
       "Yagba-East",
-      "Yagba-West"
-    ]
+      "Yagba-West",
+    ],
   },
   {
-    "code": "KW",
-    "value": "Kwara",
-    "lgas": [
+    code: "KW",
+    estate: "Kwara",
+    lgas: [
       "Asa",
       "Baruten",
       "Edu",
@@ -636,13 +705,13 @@
       "Offa",
       "Oke-Ero",
       "Oyun",
-      "Pategi"
-    ]
+      "Pategi",
+    ],
   },
   {
-    "code": "LA",
-    "value": "Lagos",
-    "lgas": [
+    code: "LA",
+    estate: "Lagos",
+    lgas: [
       "Agege",
       "Ajeromi-Ifelodun",
       "Alimosho",
@@ -663,13 +732,13 @@
       "Oshodi-Isolo",
       "Shomolu",
       "Surulere",
-      "Yewa-South"
-    ]
+      "Yewa-South",
+    ],
   },
   {
-    "code": "NA",
-    "value": "Nassarawa",
-    "lgas": [
+    code: "NA",
+    estate: "Nassarawa",
+    lgas: [
       "Akwanga",
       "Awe",
       "Doma",
@@ -682,13 +751,13 @@
       "Nasarawa-Eggon",
       "Obi",
       "Wamba",
-      "Toto"
-    ]
+      "Toto",
+    ],
   },
   {
-    "code": "NI",
-    "value": "Niger",
-    "lgas": [
+    code: "NI",
+    estate: "Niger",
+    lgas: [
       "Agaie",
       "Agwara",
       "Bida",
@@ -713,13 +782,13 @@
       "Shiroro",
       "Suleja",
       "Tafa",
-      "Wushishi"
-    ]
+      "Wushishi",
+    ],
   },
   {
-    "code": "OG",
-    "value": "Ogun",
-    "lgas": [
+    code: "OG",
+    estate: "Ogun",
+    lgas: [
       "Abeokuta-North",
       "Abeokuta-South",
       "Ado-Odo Ota",
@@ -738,13 +807,13 @@
       "Ogun-Waterside",
       "Remo-North",
       "Shagamu",
-      "Yewa North"
-    ]
+      "Yewa North",
+    ],
   },
   {
-    "code": "ON",
-    "value": "Ondo",
-    "lgas": [
+    code: "ON",
+    estate: "Ondo",
+    lgas: [
       "Akoko North-East",
       "Akoko North-West",
       "Akoko South-West",
@@ -762,13 +831,13 @@
       "Ondo West",
       "Ondo-East",
       "Ose",
-      "Owo"
-    ]
+      "Owo",
+    ],
   },
   {
-    "code": "OS",
-    "value": "Osun",
-    "lgas": [
+    code: "OS",
+    estate: "Osun",
+    lgas: [
       "Atakumosa West",
       "Atakumosa East",
       "Ayedaade",
@@ -797,13 +866,13 @@
       "Olorunda",
       "Oriade",
       "Orolu",
-      "Osogbo"
-    ]
+      "Osogbo",
+    ],
   },
   {
-    "code": "OY",
-    "value": "Oyo",
-    "lgas": [
+    code: "OY",
+    estate: "Oyo",
+    lgas: [
       "Afijio",
       "Akinyele",
       "Atiba",
@@ -837,13 +906,13 @@
       "Oyo-East",
       "Saki-East",
       "Saki-West",
-      "Surulere"
-    ]
+      "Surulere",
+    ],
   },
   {
-    "code": "PL",
-    "value": "Plateau",
-    "lgas": [
+    code: "PL",
+    estate: "Plateau",
+    lgas: [
       "Barkin-Ladi",
       "Bassa",
       "Bokkos",
@@ -860,13 +929,13 @@
       "Qua'an Pan",
       "Riyom",
       "Shendam",
-      "Wase"
-    ]
+      "Wase",
+    ],
   },
   {
-    "code": "RI",
-    "value": "Rivers",
-    "lgas": [
+    code: "RI",
+    estate: "Rivers",
+    lgas: [
       "Abua Odual",
       "Ahoada-East",
       "Ahoada-West",
@@ -890,13 +959,13 @@
       "Opobo Nkoro",
       "Oyigbo",
       "Port-Harcourt",
-      "Tai"
-    ]
+      "Tai",
+    ],
   },
   {
-    "code": "SO",
-    "value": "Sokoto",
-    "lgas": [
+    code: "SO",
+    estate: "Sokoto",
+    lgas: [
       "Binji",
       "Bodinga",
       "Dange-Shuni",
@@ -918,13 +987,13 @@
       "Tureta",
       "Wamako",
       "Wurno",
-      "Yabo"
-    ]
+      "Yabo",
+    ],
   },
   {
-    "code": "TA",
-    "value": "Taraba",
-    "lgas": [
+    code: "TA",
+    estate: "Taraba",
+    lgas: [
       "Ardo-Kola",
       "Bali",
       "Donga",
@@ -940,13 +1009,13 @@
       "Ussa",
       "Wukari",
       "Yorro",
-      "Zing"
-    ]
+      "Zing",
+    ],
   },
   {
-    "code": "YO",
-    "value": "Yobe",
-    "lgas": [
+    code: "YO",
+    estate: "Yobe",
+    lgas: [
       "Bade",
       "Bursari",
       "Damaturu",
@@ -963,13 +1032,13 @@
       "Potiskum",
       "Tarmuwa",
       "Yunusari",
-      "Yusufari"
-    ]
+      "Yusufari",
+    ],
   },
   {
-    "code": "ZA",
-    "value": "Zamfara",
-    "lgas": [
+    code: "ZA",
+    estate: "Zamfara",
+    lgas: [
       "Anka",
       "Bakura",
       "Birnin Magaji/Kiyaw",
@@ -985,7 +1054,7 @@
       "Shinkafi",
       "Talata-Mafara",
       "Tsafe",
-      "Zurmi"
-    ]
-  }
-]
+      "Zurmi",
+    ],
+  },
+];

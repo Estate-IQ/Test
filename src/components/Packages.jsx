@@ -13,12 +13,12 @@ const Packages = () => {
           <h4>{props.subscriber} Subsscribers</h4>
 
           <div className="inline">
-            <Link to="" className="edit">
+            <Link to="/editpackage" className="edit">
               Edit
             </Link>
-            <Link to="" className="delete">
+            {/* <span to="" className="delete">
               Delete
-            </Link>
+            </span> */}
           </div>
         </div>
       </div>

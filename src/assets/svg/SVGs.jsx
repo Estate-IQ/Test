@@ -1,6 +1,7 @@
 export const SVGs = {
   brand_name: require("../svg/brand_name.svg").default,
   brand_logo: require("../svg/brand_logo.svg").default,
+  delete: require("../svg/delete.svg").default,
   email: require("../svg/location.svg").default,
   close: require("../svg/close.svg").default,
   caution: require("../svg/caution.svg").default,

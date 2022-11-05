@@ -2,8 +2,6 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import { SVGs } from "../../../assets/svg/SVGs";
-import States from "../../../components/States/State";
-import LGAs from "../../../components/States/State";
 
 class MasterForm extends React.Component {
   constructor(props) {
@@ -91,7 +89,7 @@ class MasterForm extends React.Component {
           onSubmit={this.handleSubmit}
           // method="post"
           // action="/profile"
-          className="new_estates_form scale-up-center"
+          className="new_estates_form swing-in-bottom-fwd"
         >
           <p>Step {this.state.currentStep} of 2</p>
           {/* 

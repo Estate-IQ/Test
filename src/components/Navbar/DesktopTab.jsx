@@ -113,7 +113,7 @@ const DesktopTab = (props) => {
             </div>
           </div>
         </Link>
-        <Link to="/superadmin-estate">
+        <Link to="/superadmin-complaint">
           <div id="option" className={props.complain}>
             <div>
               <svg
@@ -142,7 +142,7 @@ const DesktopTab = (props) => {
         </Link>
         <div className="loging_out">
           <Link to="/get-started">
-            <div id="option" className={props.complain}>
+            <div id="option" className="">
               <div>
                 <svg
                   width="20"

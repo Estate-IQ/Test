@@ -8,7 +8,7 @@ const ResetPassword = () => {
       <div className="create_bg">
         <div className="create_est">
           <img src={Images.logo} alt="Estate-IQ" />
-          <form action="" className="scale-up-center">
+          <form action="" className="swing-in-bottom-fwd">
             <div className="form_txt default_p">
               <p>Step 1 of 2</p>
               <h1>Reset password</h1>

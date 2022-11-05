@@ -1258,11 +1258,13 @@ input {
     padding: 10px;
     background: var(--White);
     border-radius: 5px;
+    cursor: pointer;
     border: 1px solid rgba(44, 51, 58, 0.2);
     font-size: 16px;
     font-weight: 400;
     line-height: 24px;
     letter-spacing: 0px;
+    height: 45px;
     text-align: left;
     display: flex;
     justify-content: space-between;
@@ -1271,6 +1273,16 @@ input {
     img {
       width: 24px;
       height: 24px;
+      position: absolute;
+      right: 20px;
+    }
+    input {
+      width: 90% !important;
+      background: transparent;
+      padding: 0;
+      outline: 0;
+      font-size: 16px;
+      border: 0;
     }
   }
   .select_content {
@@ -1285,7 +1297,7 @@ input {
     background: #ffffff;
     border: 1px solid #c0c0c0;
     border-radius: 5px;
-    overflow-y: scroll;
+    overflow: auto;
   }
   .select_items {
     font-size: 16px;
@@ -1582,7 +1594,7 @@ input:valid {
     max-height: 200px;
     border: 1px solid #c0c0c0;
     border-radius: 5px;
-    overflow-y: scroll;
+    overflow: auto;
     .overflowing_content {
     }
   }

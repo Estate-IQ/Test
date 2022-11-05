@@ -2,8 +2,8 @@ import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import { SVGs } from "../../../assets/svg/SVGs";
-import States from "../../../components/States/State";
-import LGAs from "../../../components/States/State";
+import States from "../../../components/Location";
+// import LGAs from "../../../components/States/State";
 
 class MasterForm extends React.Component {
   constructor(props) {
@@ -16,10 +16,21 @@ class MasterForm extends React.Component {
       lastName: "",
       mobile: "",
       emailId: "",
+      estateEmail: "",
       state: "",
     };
+    this.handleSearch = this.handleSearch.bind(this);
   }
 
+  componentDidUpdate() {
+    console.log("Final State: ", this.state.state);
+  }
+  handleSearch = (event) => {
+    console.log(event);
+    this.setState({
+      state: event,
+    });
+  };
   handleChange = (event) => {
     const { name, value } = event.target;
     this.setState({
@@ -37,7 +48,7 @@ class MasterForm extends React.Component {
     // Password: ${password}\n
     // `);
     Swal.fire({
-      title: `<h1>${firstName},</h1>You just created an estate with the email <h4> ${email} </h4> and your password is ${state} ${password}</div>`,
+      title: `<h1>${firstName},</h1>You just created an estate with the email <h4> ${email} </h4> and the password is ${password}</div>`,
       icon: "success",
       showConfirmButton: true,
       showCloseButton: true,
@@ -100,7 +111,7 @@ class MasterForm extends React.Component {
           onSubmit={this.handleSubmit}
           // method="post"
           // action="/profile"
-          className="new_estates_form scale-up-center"
+          className="new_estates_form swing-in-bottom-fwd"
         >
           <p>Step {this.state.currentStep} of 2</p>
 
@@ -116,7 +127,7 @@ class MasterForm extends React.Component {
           <Step2
             currentStep={this.state.currentStep}
             handleChange={this.handleChange}
-            estate_email={this.state.estate_email}
+            estateEmail={this.state.estateEmail}
             emailId={this.state.emailId}
             estate_ads={this.state.estate_ads}
             estateName={this.state.estateName}
@@ -225,10 +236,10 @@ function Step2(props) {
         />
         <input
           type="email"
-          id="estate_email"
-          name="estate_email"
+          id="estateEmail"
+          name="estateEmail"
           placeholder="Estate Email *"
-          value={props.estate_email}
+          value={props.estateEmail}
           onChange={props.handleChange}
           required
         />
@@ -240,10 +251,8 @@ function Step2(props) {
           value={props.emailId}
           onChange={props.handleChange}
         />
-        <div className="double_input">
-          <States name="emailId" placeholder="Estate ID" />
-          <LGAs />
-        </div>
+
+        <States handleSearch={props.handleSearch} state={props.state} />
       </div>
       <button
         onClick={returnSuccessMessage}

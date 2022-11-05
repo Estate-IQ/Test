@@ -8,7 +8,7 @@ const Login = () => {
       <div className="create_bg">
         <div className="create_est">
           <img src={Images.logo} alt="Estate-IQ" />
-          <form action="" className="scale-up-center">
+          <form action="" className="swing-in-bottom-fwd">
             <div className="form_txt">
               <h1>Create Estate</h1>
               <h4>Admin Info</h4>

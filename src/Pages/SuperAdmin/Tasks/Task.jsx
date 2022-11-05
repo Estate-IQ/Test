@@ -1,66 +1,76 @@
 import React, { useState } from "react";
-// import JSON from "./Data.json";
-// import Pagination from "rc-pagination";
-import NewTask from "./NewTask";
+
 import { SVGs } from "../../../assets/svg/SVGs";
 import { Images } from "../../../assets/images/Images";
 import GNavbar from "../../../components/Navbar/DesktopTab";
 import Mobile from "../../../components/Navbar/Navbar";
 import { Link } from "react-router-dom";
 import AllTask from "../../../components/Tasks/AllTask";
-// import TopNav from "../../../components/Navbar/TopNav";
+import Advert from "./Advert";
+import Reminder from "./Reminder";
+import Announcement from "../../SuperAdmin/Tasks/Announce/Announce";
 
 const Estate = () => {
-  const [download, setDownload] = useState("New Task");
+  const [selected, setSelected] = useState("New Task");
   const [openModal, setOpenModal] = useState(false);
+  const [reminder, setReminder] = useState(false);
+  const [announce, setAnnouncement] = useState(false);
   const [activeIndex, setActiveIndex] = useState(1);
   const handleClick = (index) => setActiveIndex(index);
+
+  const [isActive, setIsActive] = useState(false);
   const checkActive = (index, className) =>
     activeIndex === index ? className : "";
+
   //   // SEARCH INPUT
   const [searchInput, setSearchInput] = useState("");
-  //   // ======STATES FOR PAGINATION
-  const datatableUsers = JSON;
-  const [perPage, setPerPage] = useState(8);
-  const [size, setSize] = useState(perPage);
-  const [current, setCurrent] = useState(1);
 
-  const PerPageChange = (value) => {
-    setSize(value);
-    const newPerPage = Math.ceil(datatableUsers.length / value);
-    if (current > newPerPage) {
-      setCurrent(newPerPage);
-    }
+  // TESTING STATES FOR M:DAL
+  const SelectDrop = () => {
+    const [isActive, setIsActive] = useState(false);
+
+    return (
+      <div className="select_me with_blue">
+        <div className="select-btn" onClick={(e) => setIsActive(!isActive)}>
+          {selected}
+        </div>
+        {isActive && (
+          <div className="select_content">
+            {/* Advert */}
+            <div
+              className="select_items"
+              onClick={(e) => {
+                setSelected("Advert");
+                setOpenModal(true);
+              }}
+            >
+              <p onClick={() => setOpenModal(true)}>Advert</p>
+            </div>
+            {/* Announcement */}
+            <div
+              className="select_items"
+              onClick={(e) => {
+                setSelected("Announcement");
+                setIsActive(true);
+              }}
+            >
+              <p onClick={() => setAnnouncement(true)}>Announcement</p>
+            </div>
+            {/* Reminder */}
+            <div
+              className="select_items"
+              onClick={(e) => {
+                setSelected("Reminder");
+                setIsActive(true);
+              }}
+            >
+              <p onClick={() => setReminder(true)}>Reminder</p>
+            </div>
+          </div>
+        )}
+      </div>
+    );
   };
-
-  const getData = (current, pageSize) => {
-    // Normally you should get the data from the server
-    return datatableUsers.slice((current - 1) * pageSize, current * pageSize);
-  };
-
-  const PaginationChange = (page, pageSize) => {
-    setCurrent(page);
-    setSize(pageSize);
-  };
-
-  const PrevNextArrow = (current, type, originalElement) => {
-    if (type === "prev") {
-      return (
-        <button>
-          <i className="fa fa-angle-double-left"></i>
-        </button>
-      );
-    }
-    if (type === "next") {
-      return (
-        <button>
-          <i className="fa fa-angle-double-right"></i>
-        </button>
-      );
-    }
-    return originalElement;
-  };
-
   return (
     <section className="change_ratio">
       <GNavbar task="active_tab" />
@@ -116,8 +126,8 @@ const Estate = () => {
                   Completed task (25)
                 </button>
               </div>
-
-              <NewTask selected={download} setSelected={setDownload} />
+              {/* <NewTask /> */}
+              <SelectDrop selected={selected} setSelected={setSelected} />
             </div>
 
             {/* RESULT FROM TAB */}
@@ -126,28 +136,15 @@ const Estate = () => {
                 <AllTask />
               </div>
 
-              <div className={`panel ${checkActive(2, "active")}`}>
-                {/*==========
-                ACTIVE ESTATES
-                ============*/}
-              </div>
+              <div className={`panel ${checkActive(2, "active")}`}></div>
               <div className={`panel ${checkActive(3, "active")}`}></div>
               <div className={`panel ${checkActive(4, "active")}`}></div>
             </div>
           </div>
         </div>
-        {/* <Modal open={openModal} onClose={() => setOpenModal(false)} /> */}
-        {/* <Pagination
-          className="pagination-data"
-          // showTotal={(total, range) => `${range[0]}-${range[1]} / ${total}`}
-          onChange={PaginationChange}
-          total={datatableUsers.length}
-          current={current}
-          pageSize={size}
-          showSizeChanger={false}
-          itemRender={PrevNextArrow}
-          onShowSizeChange={PerPageChange}
-        /> */}
+        <Advert open={openModal} onClose={() => setOpenModal(false)} />
+        <Reminder open={reminder} onClose={() => setReminder(false)} />
+        <Announcement open={announce} onClose={() => setAnnouncement(false)} />
       </section>
     </section>
   );

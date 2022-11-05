@@ -1519,11 +1519,13 @@ input:focus {
   padding: 10px;
   background: var(--White);
   border-radius: 5px;
+  cursor: pointer;
   border: 1px solid rgba(44, 51, 58, 0.2);
   font-size: 16px;
   font-weight: 400;
   line-height: 24px;
   letter-spacing: 0px;
+  height: 45px;
   text-align: left;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1540,6 +1542,17 @@ input:focus {
 .select_me .select-btn img {
   width: 24px;
   height: 24px;
+  position: absolute;
+  right: 20px;
+}
+
+.select_me .select-btn input {
+  width: 90% !important;
+  background: transparent;
+  padding: 0;
+  outline: 0;
+  font-size: 16px;
+  border: 0;
 }
 
 .select_me .select_content {
@@ -1553,7 +1566,7 @@ input:focus {
   background: #ffffff;
   border: 1px solid #c0c0c0;
   border-radius: 5px;
-  overflow-y: scroll;
+  overflow: auto;
 }
 
 .select_me .select_items {
@@ -1899,7 +1912,7 @@ input:valid {
   max-height: 200px;
   border: 1px solid #c0c0c0;
   border-radius: 5px;
-  overflow-y: scroll;
+  overflow: auto;
 }
 
 .select_me .select_items {

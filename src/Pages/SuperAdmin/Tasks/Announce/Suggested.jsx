@@ -25,15 +25,6 @@ const getTagLabel = (tag) => {
 //     .join("");
 // };
 
-/**
- * INPUT: "Bakery Products > Biscuits > Savoury",
- * OUTPUT:
- * {
- *   "id": 2,
- *   "name": "Bakery Products > Biscuits > Savoury",
- *   "tag": "Bakery Products ... Savoury"
- * },
- */
 export default tags.map((tagString, index) => ({
   id: index + 1,
   name: tagString, // getIndentedTagName(tagString),

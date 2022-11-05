@@ -1,18 +1,27 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import { SVGs } from "../../../assets/svg/SVGs";
+import CardRadio from "../../../components/ToggleCard";
 
 class MasterForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       currentStep: 1,
-      title: "",
-      date: "",
-      time: "",
-      description: "",
+      type: "",
+      packageName: "",
+      paymentOption: "",
+      bankName: "",
+      acctNumber: "",
+      cost: "",
     };
+  }
+
+  toggleState() {
+    this.setState({
+      toggle: !this.state.toggle,
+    });
   }
 
   handleChange = (event) => {
@@ -24,16 +33,24 @@ class MasterForm extends React.Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    const { title, description, fileName } = this.state;
+    const { packageName } = this.state;
+    // alert(`Your registration detail: \n
+    // Email: ${email} \n
+    // Username: ${firstName} \n
+    // Username:  ${state} \n
+    // Password: ${password}\n
+    // `);
     Swal.fire({
-      title: `<div>A Remider has been created to <h4> ${title}</h4> </div>`,
+      title: `Your Package Name is <h4> ${packageName}`,
       icon: "success",
       showConfirmButton: true,
       showCloseButton: true,
     });
 
+    // useNavigate("/profile", { replace: true });
+
     // .then(function () {
-    //   window.location = "/superadmin-tasks";
+    //   window.location = "/Test/profile";
     // });
   };
 
@@ -89,18 +106,26 @@ class MasterForm extends React.Component {
           // action="/profile"
           className="new_estates_form swing-in-bottom-fwd"
         >
-          {/* <p>Step {this.state.currentStep} of 2</p> */}
-          {/* 
-          render the form steps and pass required props in
-        */}
+          <p>Step {this.state.currentStep} of 2</p>
+
           <Step1
             currentStep={this.state.currentStep}
             handleChange={this.handleChange}
-            title={this.state.title}
-            description={this.state.description}
-            date={this.state.date}
-            time={this.state.time}
+            email={this.state.email}
+            firstName={this.state.type}
+            lastName={this.state.packageName}
           />
+          <Step2
+            currentStep={this.state.currentStep}
+            handleChange={this.handleChange}
+            estate_email={this.state.bankName}
+            emailId={this.state.acctNumber}
+            estate_ads={this.state.cost}
+          />
+          <div className="control_btn">
+            {this.previousButton()}
+            {this.nextButton()}
+          </div>
         </form>
       </React.Fragment>
     );
@@ -113,47 +138,81 @@ function Step1(props) {
   }
   return (
     <div className="form-group">
-      {/* <label htmlFor="title">Email address</label> */}
-
       <div className="create_est ">
         <div className="form_txt">
-          <div className="capture_close">
-            <h1>Reminder</h1>
-          </div>
+          <h1 className="packageNmae">Create Package</h1>
+          {/* <h4>Admin Info</h4> */}
         </div>
-
         <input
           type="text"
-          id="title"
-          value={props.title}
+          id="type"
+          value={props.type}
           onChange={props.handleChange}
-          name="title"
-          placeholder="Remind Me to ..."
+          name="type"
+          placeholder="Permission Type"
         />
+        <input
+          type="text"
+          placeholder="Package Name"
+          id="packageName"
+          value={props.packageName}
+          onChange={props.handleChange}
+          name="packageName"
+        />
+        <div className="switch-field">
+          <CardRadio
+            title=" Prefered Payment Option"
+            leftLabel="Credit/Debit Card"
+            rightLabel="Bank Transfer"
+          />
+        </div>
+      </div>
+    </div>
+  );
+}
 
-        <textarea
-          id="description"
-          name="description"
-          value={props.description}
-          onChange={props.handleChange}
-          placeholder="Description"
-        ></textarea>
+function Step2(props) {
+  if (props.currentStep !== 2) {
+    return null;
+  }
+  return (
+    <div className="form-group">
+      <div className="create_est ">
+        <div className="form_txt">
+          <h1>Add Account</h1>
+          <h4>payment Info</h4>
+        </div>
         <input
-          type="date"
-          id="date"
-          value={props.date}
+          type="text"
+          id="bankName"
+          name="bankName"
+          placeholder="Bank Name"
+          value={props.bankName}
           onChange={props.handleChange}
-          name="date"
         />
         <input
-          type="time"
-          id="time"
-          value={props.time}
+          type="number"
+          id="acctNumber"
+          name="acctNumber"
+          placeholder="Account Number"
+          value={props.acctNumber}
           onChange={props.handleChange}
-          name="time"
+        />
+        <input
+          type="number"
+          id="cost"
+          name="cost"
+          placeholder="Account Number"
+          value={props.cost}
+          onChange={props.handleChange}
         />
       </div>
-      <button>Create Reminder</button>
+      <button
+        // onClick={returnSuccessMessage}
+        className="btn btn-success btn-block"
+      >
+        Create Package
+      </button>
     </div>
   );
 }

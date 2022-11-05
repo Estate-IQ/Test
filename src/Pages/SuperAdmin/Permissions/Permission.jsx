@@ -1,16 +1,12 @@
 import React, { useState } from "react";
-// import JSON from "./Data.json";
-// import Pagination from "rc-pagination";
-// import Modal from "./AddNew";
+import Modal from "./CreateP";
 import { SVGs } from "../../../assets/svg/SVGs";
 import { Images } from "../../../assets/images/Images";
 import GNavbar from "../../../components/Navbar/DesktopTab";
 import Mobile from "../../../components/Navbar/Navbar";
-import { Link } from "react-router-dom";
 import Packages from "../../../components/Packages";
-// import TopNav from "../../../components/Navbar/TopNav";
 
-const Estate = () => {
+const Permission = () => {
   const [openModal, setOpenModal] = useState(false);
 
   return (
@@ -44,14 +40,19 @@ const Estate = () => {
               <h1>Subscription</h1>
               <p>4 Packages</p>
             </div>
-            <button className="important-btn">Create Packages</button>
+            <button
+              className="important-btn"
+              onClick={() => setOpenModal(true)}
+            >
+              Create Packages
+            </button>
           </div>
           <Packages />
         </div>
-        {/* <Modal open={openModal} onClose={() => setOpenModal(false)} /> */}
+        <Modal open={openModal} onClose={() => setOpenModal(false)} />
       </section>
     </section>
   );
 };
 
-export default Estate;
+export default Permission;

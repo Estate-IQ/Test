@@ -81,7 +81,7 @@ const RightNav = ({ open }) => {
         <Link to="/superadmin-permission">
           <li className="before_list psm">Permission</li>
         </Link>
-        <Link to="/">
+        <Link to="/superadmin-complaint">
           <li className="before_list comp">Complaints</li>
         </Link>
 

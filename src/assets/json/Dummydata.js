@@ -1185,7 +1185,7 @@ export const userRows = [
     transaction: "$120.00",
   },
 ];
-let countries = [
+export const countries = [
   { code: "AD", label: "Andorra", phone: "376" },
   {
     code: "AE",
