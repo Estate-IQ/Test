@@ -199,10 +199,10 @@ function Step2(props) {
           onChange={props.handleChange}
         />
         <input
-          type="number"
+          type="text"
           id="cost"
           name="cost"
-          placeholder="Account Number"
+          placeholder="Account Name"
           value={props.cost}
           onChange={props.handleChange}
         />

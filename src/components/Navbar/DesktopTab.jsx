@@ -25,7 +25,7 @@ const DesktopTab = (props) => {
                   fill="#1737E6"
                 />
               </svg>
-              <h4>Overview</h4>
+              <h4>Dashboard</h4>
             </div>
           </div>
         </Link>
@@ -46,7 +46,7 @@ const DesktopTab = (props) => {
                   fill="#F6F6F6"
                 />
               </svg>
-              <h4>Estate</h4>
+              <h4>Estates</h4>
             </div>
           </div>
         </Link>
@@ -141,7 +141,7 @@ const DesktopTab = (props) => {
           </div>
         </Link>
         <div className="loging_out">
-          <Link to="/get-started">
+          <Link to="/login">
             <div id="option" className="">
               <div>
                 <svg

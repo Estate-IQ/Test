@@ -72,7 +72,8 @@ class MasterForm extends React.Component {
     );
 
     Swal.fire({
-      title: `Hi <h1>${firstName}! </h1>You just created an estate with the email <h4> ${email} </h4> and your password is <h4>${password}</h4>   Kindly check your email to Get Started</div>`,
+      // title: `Hi <h1>${firstName}! </h1>You just created an estate with the email <h4> ${email} </h4> and your password is <h4>${password}</h4>   Kindly check your email to Get Started</div>`,
+      title: `Hi <h1>${firstName} ! </h1>You have successfully created <h4> ${estateName} </h4> on EstateIQ. A welcome message has been sent to <h4> ${email} </h4> for verification</div>`,
       icon: "success",
       showConfirmButton: false,
       showCloseButton: true,

@@ -12,9 +12,11 @@ class MasterForm extends React.Component {
       currentStep: 1,
       email: "",
       password: "",
+      C_password: "",
       firstName: "",
       lastName: "",
       mobile: "",
+      estateName: "",
       emailId: "",
       estateEmail: "",
       state: "",
@@ -40,7 +42,7 @@ class MasterForm extends React.Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    const { email, firstName, password, state } = this.state;
+    const { email, estateName, firstName, password, state } = this.state;
     // alert(`Your registration detail: \n
     // Email: ${email} \n
     // Username: ${firstName} \n
@@ -48,7 +50,7 @@ class MasterForm extends React.Component {
     // Password: ${password}\n
     // `);
     Swal.fire({
-      title: `<h1>${firstName},</h1>You just created an estate with the email <h4> ${email} </h4> and the password is ${password}</div>`,
+      title: `You just created a new estate you named <h1>${estateName}</h1>Email has been sent to  <h4> ${email} </h4></div>`,
       icon: "success",
       showConfirmButton: true,
       showCloseButton: true,
@@ -122,6 +124,7 @@ class MasterForm extends React.Component {
             firstName={this.state.firstName}
             lastName={this.state.lastName}
             password={this.state.password}
+            C_password={this.state.C_password}
             mobile={this.state.mobile}
           />
           <Step2
@@ -195,10 +198,10 @@ function Step1(props) {
           onChange={props.handleChange}
         />
         <input
-          id="password"
-          name="password"
+          id="C_password"
+          name="C_password"
           type="password"
-          value={props.password}
+          value={props.C_password}
           onChange={props.handleChange}
           placeholder="Confirm Password"
         />

@@ -13,14 +13,13 @@ const Login = () => {
               <h1>Create Estate</h1>
               <h4>Admin Info</h4>
               <p className="with_link">
-                New user? <Link to="/"> Create account</Link>
+                New user? <Link to="/get-started"> Create account</Link>
               </p>
             </div>
 
             <input type="email" placeholder="Email" required />
 
             <input type="password" placeholder="Password" />
-            <input type="password" placeholder="Confirm Password" />
 
             <div className="reset-password">
               <Link to="/reset-password">Forget Password ?</Link>

@@ -51,7 +51,7 @@ const Modal = ({ open, onClose }) => {
             <input type="date" id="date" name="date" />
             <input type="time" id="time" name="time" />
           </div>
-          <button>Create Reminder</button>
+          <button>Publish</button>
         </form>
         <img src={SVGs.close} alt="" onClick={onClose} />
       </div>

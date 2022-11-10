@@ -203,7 +203,7 @@ function Step2(props) {
           onChange={props.handleChange}
         />
       </div>
-      <button>Create Estate</button>
+      <button>Publish</button>
     </div>
   );
 }
