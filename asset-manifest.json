@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/estate-iq/static/css/main.2dc63d15.css",
-    "main.js": "/estate-iq/static/js/main.5b2b6ab9.js",
+    "main.css": "/estate-iq/static/css/main.b9f424f4.css",
+    "main.js": "/estate-iq/static/js/main.59486445.js",
     "static/media/about.png": "/estate-iq/static/media/about.4c70c71c7ad630fb478f.png",
     "static/media/individual_p.png": "/estate-iq/static/media/individual_p.37c7a7703df8de16f315.png",
     "static/media/feature1.png": "/estate-iq/static/media/feature1.c7f957c1de39382371f3.png",
@@ -69,6 +69,7 @@
     "static/media/handoff.svg": "/estate-iq/static/media/handoff.f9557e987a645afd3a05d3d619fe4e0b.svg",
     "static/media/affordable.svg": "/estate-iq/static/media/affordable.5d07f9d0836cb9abfbab5bbf3e574e34.svg",
     "static/media/google.svg": "/estate-iq/static/media/google.473a70040ef0272cc443.svg",
+    "static/media/Entry.svg": "/estate-iq/static/media/Entry.513cdb0b3008782b7b7096dd8f8d8591.svg",
     "static/media/w_twitter.svg": "/estate-iq/static/media/w_twitter.ff891d07b0fc563e163021ea1f001b30.svg",
     "static/media/est.svg": "/estate-iq/static/media/est.16067f6498c11eda5348.svg",
     "static/media/creation.svg": "/estate-iq/static/media/creation.26dca0584c6e8562400baed22cba81f1.svg",
@@ -92,10 +93,13 @@
     "static/media/facebook_b.svg": "/estate-iq/static/media/facebook_b.8ed54607d65052958118.svg",
     "static/media/delete.svg": "/estate-iq/static/media/delete.37ba15087a6aba8b287a13f7ef96fbe9.svg",
     "static/media/vendor.svg": "/estate-iq/static/media/vendor.3b1586155cd65eb8b0b863a4d82d3ad4.svg",
+    "static/media/emailGroup.svg": "/estate-iq/static/media/emailGroup.a85b0811a59211a76613d0637c016245.svg",
     "static/media/email_a.svg": "/estate-iq/static/media/email_a.42d6943e967156ba48021b13e573bf00.svg",
     "static/media/js.svg": "/estate-iq/static/media/js.a3e25e823c8bb02c03f6290066e20e0a.svg",
     "static/media/w_linkedin.svg": "/estate-iq/static/media/w_linkedin.cf220929c69e315161fbef478c00b6c1.svg",
+    "static/media/message_badge.svg": "/estate-iq/static/media/message_badge.2176b33d0c4fafe04432.svg",
     "static/media/accessable.svg": "/estate-iq/static/media/accessable.edd5dc196356c19bd176e2a5437aa4a5.svg",
+    "static/media/callGroup.svg": "/estate-iq/static/media/callGroup.7d9675189a947483f3d8aa765d0afa59.svg",
     "static/media/call_a.svg": "/estate-iq/static/media/call_a.b1012a5569b481da497fbe0edce726f9.svg",
     "static/media/msg.svg": "/estate-iq/static/media/msg.3a870b07017284827ca3.svg",
     "static/media/clock.svg": "/estate-iq/static/media/clock.61ea6b5351a5118d95edb443bda4f8b9.svg",
@@ -108,14 +112,17 @@
     "static/media/essential.svg": "/estate-iq/static/media/essential.7775b93c75abe324d3bfc720dd50f2b2.svg",
     "static/media/free.svg": "/estate-iq/static/media/free.94f5fa54073dd0c8b319b26686bf8165.svg",
     "static/media/mail.svg": "/estate-iq/static/media/mail.98e96d75b1b9f1cf8cfe0516fddb0fa3.svg",
+    "static/media/activitySVG.svg": "/estate-iq/static/media/activitySVG.f646efddffadb77bee6726bd3b2ca310.svg",
+    "static/media/entry_thumb.svg": "/estate-iq/static/media/entry_thumb.93d175ea1aa8158f6293.svg",
     "static/media/facebook.svg": "/estate-iq/static/media/facebook.a5e45d860cf6b3b12e52034140042c46.svg",
     "static/media/w_facebook.svg": "/estate-iq/static/media/w_facebook.1e93c00dd1168eb8c0ab5b82a8fba24a.svg",
+    "static/media/red_exit.svg": "/estate-iq/static/media/red_exit.d33f50a099d8444c7b41.svg",
     "static/media/close.svg": "/estate-iq/static/media/close.17b64f195f145e24a47e4438ecc4e043.svg",
-    "main.2dc63d15.css.map": "/estate-iq/static/css/main.2dc63d15.css.map",
-    "main.5b2b6ab9.js.map": "/estate-iq/static/js/main.5b2b6ab9.js.map"
+    "main.b9f424f4.css.map": "/estate-iq/static/css/main.b9f424f4.css.map",
+    "main.59486445.js.map": "/estate-iq/static/js/main.59486445.js.map"
   },
   "entrypoints": [
-    "static/css/main.2dc63d15.css",
-    "static/js/main.5b2b6ab9.js"
+    "static/css/main.b9f424f4.css",
+    "static/js/main.59486445.js"
   ]
 }
