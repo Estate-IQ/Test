@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 import { SVGs } from "../../../assets/svg/SVGs";
 import { Images } from "../../../assets/images/Images";
-import GNavbar from "../../../components/Navbar/DesktopTab";
+import GNavbar from "../../../components/Navbar/S-Navigator";
 import Mobile from "../../../components/Navbar/Navbar";
 import { Link } from "react-router-dom";
 import AllTask from "../../../components/Tasks/AllTask";

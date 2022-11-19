@@ -4,7 +4,7 @@ import { SVGs } from "../assets/svg/SVGs";
 import email from "../assets/svg/email_a.svg";
 import call from "../assets/svg/call_a.svg";
 import { Images } from "../assets/images/Images";
-import GNavbar from "../components/Navbar/DesktopTab";
+import GNavbar from "./Navbar/S-Navigator";
 import Mobile from "../components/Navbar/Navbar";
 
 const Profile = () => {

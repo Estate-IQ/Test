@@ -6,7 +6,14 @@ const DesktopTab = (props) => {
   return (
     <section className="control_view">
       <div className="desktop_nav">
-        <img src={SVGs.brand_name} alt="Estate IQ" className="for_desktops" />
+        <div className="changeNarative">
+          <img
+            src={SVGs.brand_name}
+            alt="Estate IQ"
+            className="for_desktops superadmin_logo"
+          />
+        </div>
+
         <img src={SVGs.brand_logo} alt="Estate IQ" className="for_phone" />
         <Link to="/">
           <div id="option" className={props.overview}>

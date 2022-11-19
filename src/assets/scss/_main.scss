@@ -8,7 +8,41 @@
   list-style-type: none;
   -webkit-tap-highlight-color: transparent;
 }
-
+.paginationButtons {
+  display: flex;
+  justify-content: space-between;
+  max-width: 452px;
+  margin: 30px auto;
+  .next,
+  .previous {
+    background-color: var(--Brand-color);
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #ffffff;
+    padding: 5px 15px;
+    &:hover {
+      background: var(--Brand-color);
+    }
+  }
+  li {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+    letter-spacing: 0.018em;
+    padding: 5px 10px;
+    margin: 3px;
+    cursor: pointer;
+    &:hover {
+      background: #f3f3f3;
+    }
+  }
+  .paginationActive {
+    font-weight: 600;
+    border-bottom: 2px solid var(--Brand-color);
+  }
+}
 .DarkLavender {
   background-color: var(--DarkLavender);
 }
@@ -592,7 +626,7 @@ nav {
       // color: var(--Main-Gradient);
     }
     &:active {
-      border-bottom: #00838f;
+      border-bottom: var(--Brand-color);
     }
   }
 }
@@ -880,7 +914,42 @@ $tab-content-height: 300px;
     }
   }
 }
-
+.entry {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 18px;
+  letter-spacing: -0.06em;
+  text-align: left;
+  position: relative;
+  color: rgba(57, 224, 64, 1);
+  &::before {
+    content: url("../svg/entry_thumb.svg");
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    position: absolute;
+    left: -35px;
+    top: -5px;
+  }
+}
+.exit {
+  color: red;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 18px;
+  letter-spacing: -0.06em;
+  text-align: left;
+  position: relative;
+  &::before {
+    content: url("../svg/red_exit.svg");
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    position: absolute;
+    left: -35px;
+    top: -5px;
+  }
+}
 table {
   border-collapse: collapse;
   font-family: var(--Satoshi);
@@ -897,7 +966,7 @@ table {
       font-weight: 500;
       border-radius: 5px 5px 0px 0px;
       &:nth-of-type(1) {
-        background-color: #f3f3f3;
+        background-color: #f3f3f3 !important;
       }
     }
   }
@@ -907,7 +976,7 @@ table {
       font-size: 15px;
       font-weight: 500;
       &:nth-of-type(even) {
-        background-color: #f3f3f3;
+        background-color: #f2f2f2 !important;
         // font-family: Nunito;
         font-size: 15px;
         font-weight: 500;
@@ -1195,6 +1264,12 @@ table {
     margin: 0;
   }
 }
+.single_form {
+  margin-bottom: 25px;
+  h1 {
+    font-size: 25px !important;
+  }
+}
 pre {
   background-color: #f3f3f3;
   // text-align: left;
@@ -1203,7 +1278,17 @@ pre {
   max-height: 450px;
   overflow: scroll;
 }
-
+.scrollable_table {
+  overflow: auto;
+  p {
+    margin: 0 !important;
+  }
+  @media (max-width: 1200px) {
+    table {
+      min-width: 1200px;
+    }
+  }
+}
 .input_parent {
   margin: 25px 0;
   height: 50px;
@@ -1245,6 +1330,28 @@ input {
     outline: var(--Brand-color);
   }
 }
+.search_set {
+  border: 1px solid #d8d8d8;
+  padding: 0 10px;
+  border-radius: 5px;
+  max-width: 400px;
+  height: 46px;
+  width: 300px;
+  display: flex;
+  img {
+    width: 25px;
+    margin-right: 0px;
+    top: 6px;
+  }
+  input {
+    border: 0;
+    background: transparent !important;
+    outline: 0;
+    height: 43px;
+    font-size: 16px;
+    padding: 10px;
+  }
+}
 .select_me {
   width: 200px;
   position: relative;
@@ -1262,6 +1369,7 @@ input {
     border: 1px solid rgba(44, 51, 58, 0.2);
     font-size: 16px;
     font-weight: 400;
+    position: relative;
     line-height: 24px;
     letter-spacing: 0px;
     height: 45px;
@@ -1270,6 +1378,10 @@ input {
     justify-content: space-between;
     align-items: center;
     color: var(--Gunmetal);
+    span {
+      position: absolute;
+      left: 20px;
+    }
     img {
       width: 24px;
       height: 24px;
@@ -1283,6 +1395,7 @@ input {
       outline: 0;
       font-size: 16px;
       border: 0;
+      margin: 0 !important;
     }
   }
   .select_content {
@@ -1306,10 +1419,18 @@ input {
     letter-spacing: 0em;
     text-align: left;
     padding: 10px;
+    cursor: pointer;
     transition: 0.4s;
-    border-bottom: 1px solid #f5f5f5;
+    margin-bottom: 3px;
+    translate: scale(1);
+    transition: 0.4s;
+    // border-bottom: 1px solid #f5f5f5;
     &:hover {
-      background-color: rgba(0, 131, 143, 0.07);
+      // background-color: rgba(0, 131, 143, 0.07);
+      translate: scale(1.9);
+      background: #f2f6ff;
+      border: 1px solid #2d4bf3;
+      border-radius: 5px;
     }
   }
 }
@@ -1348,7 +1469,7 @@ input {
         margin-right: 5px;
         width: 20px;
         height: 20px;
-        border: 1px solid #00838f;
+        border: 1px solid var(--Brand-color);
         // box-sizing: border-box;
       }
 
@@ -1357,7 +1478,7 @@ input {
         display: block;
         width: 10px;
         height: 10px;
-        background-color: #00838f;
+        background-color: var(--Brand-color);
         position: absolute;
         border-radius: 50%;
         position: absolute;
@@ -1387,7 +1508,7 @@ input {
         margin-right: 5px;
         width: 20px;
         height: 20px;
-        border: 1px solid #00838f;
+        border: 1px solid var(--Brand-color);
         // box-sizing: border-box;
       }
 
@@ -1396,7 +1517,7 @@ input {
         display: block;
         width: 10px;
         height: 10px;
-        background-color: #00838f;
+        background-color: var(--Brand-color);
         position: absolute;
         border-radius: 50%;
         position: absolute;
@@ -1532,7 +1653,7 @@ input {
 
 input:focus ~ label {
   top: -15px;
-  color: #00838f;
+  color: var(--Brand-color);
   background-color: white;
   padding: 5px;
   font-size: 14px;
@@ -1542,7 +1663,7 @@ input:focus {
   background-color: transparent;
   z-index: 2;
   height: 50px;
-  // border: 2px solid #00838f;
+  // border: 2px solid var(--Brand-color);
   border-radius: 5px;
 }
 input:focus::placeholder {
@@ -1576,6 +1697,7 @@ input:valid {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    cursor: pointer;
     color: var(--Gunmetal);
     img {
       width: 24px;
@@ -1595,6 +1717,9 @@ input:valid {
     border: 1px solid #c0c0c0;
     border-radius: 5px;
     overflow: auto;
+    p {
+      margin: 0 !important;
+    }
     .overflowing_content {
     }
   }

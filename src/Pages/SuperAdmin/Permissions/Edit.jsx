@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { SVGs } from "../../../assets/svg/SVGs";
 import BreadCrumb from "../../../components/BreadCrumb";
 import { Images } from "../../../assets/images/Images";
-import GNavbar from "../../../components/Navbar/DesktopTab";
+import GNavbar from "../../../components/Navbar/S-Navigator";
 import Mobile from "../../../components/Navbar/Navbar";
 import PermitedServices from "../../../components/SetPermission";
 import styled from "styled-components";

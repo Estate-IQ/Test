@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import JSON from "./Data.json";
-import Pagination from "rc-pagination";
+// // import Pagination from "rc-pagination";
 import Modal from "./AddNew";
 import { SVGs } from "../../../assets/svg/SVGs";
 import { Images } from "../../../assets/images/Images";
-import GNavbar from "../../../components/Navbar/DesktopTab";
+import GNavbar from "../../../components/Navbar/S-Navigator";
 import Mobile from "../../../components/Navbar/Navbar";
 import { Link } from "react-router-dom";
 // import TopNav from "../../../components/Navbar/TopNav";
@@ -214,7 +214,7 @@ const Estate = () => {
           </div>
         </div>
         <Modal open={openModal} onClose={() => setOpenModal(false)} />
-        <Pagination
+        {/* <Pagination
           className="pagination-data"
           // showTotal={(total, range) => `${range[0]}-${range[1]} / ${total}`}
           onChange={PaginationChange}
@@ -224,7 +224,7 @@ const Estate = () => {
           showSizeChanger={false}
           itemRender={PrevNextArrow}
           onShowSizeChange={PerPageChange}
-        />
+        /> */}
       </section>
     </section>
   );

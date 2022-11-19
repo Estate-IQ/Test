@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Modal from "./CreateP";
 import { SVGs } from "../../../assets/svg/SVGs";
 import { Images } from "../../../assets/images/Images";
-import GNavbar from "../../../components/Navbar/DesktopTab";
+import GNavbar from "../../../components/Navbar/S-Navigator";
 import Mobile from "../../../components/Navbar/Navbar";
 import Packages from "../../../components/Packages";
 

@@ -1,10 +1,8 @@
-import React from "react";
-import { useState } from "react";
-import SVGs from "../../assets/svg/SVGs";
+import React, { useState } from "react";
 
-const SelectDrop = ({ selected, setSelected }) => {
+const Frequency = ({ selected, setSelected }) => {
   const [isActive, setIsActive] = useState(false);
-  const options = ["Last 7days", "Last 14 days", "This month", "This year"];
+  const options = ["Monthly", "Quarterly", "Half Yearly", "Annualy"];
   return (
     <div className="select_me filter_drop">
       <div className="select-btn" onClick={(e) => setIsActive(!isActive)}>
@@ -27,7 +25,7 @@ const SelectDrop = ({ selected, setSelected }) => {
       </div>
       {isActive && (
         <div className="select_content">
-          <h5>Duration</h5>
+          {/* <h5>Duration</h5> */}
           {options.map((option) => (
             <div
               className="select_items"
@@ -45,4 +43,4 @@ const SelectDrop = ({ selected, setSelected }) => {
   );
 };
 
-export default SelectDrop;
+export default Frequency;

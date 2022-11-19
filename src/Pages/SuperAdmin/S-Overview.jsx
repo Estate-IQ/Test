@@ -1,9 +1,9 @@
 import React from "react";
-import GNavbar from "../../components/Navbar/DesktopTab";
+import GNavbar from "../../components/Navbar/S-Navigator";
 import Mobile from "../../components/Navbar/Navbar";
-import TopNav from "../../components/Navbar/TopNav";
+import TopNav from "../../components/Navbar/SuperAdminNav";
 import Overview_card from "../../components/Overview_card";
-import D_Filter from "../../components/D_Filter";
+import D_Filter from "../../components/SuperAdminDownload";
 import LatestEstate from "../../components/LatestEstate";
 
 const Overview = () => {

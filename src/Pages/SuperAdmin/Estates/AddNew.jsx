@@ -209,7 +209,9 @@ function Step1(props) {
     </div>
   );
 }
-
+const HandleRamdomId = () => {
+  document.getElementById("emailId").value = generateID(6);
+};
 function Step2(props) {
   if (props.currentStep !== 2) {
     return null;
@@ -225,6 +227,7 @@ function Step2(props) {
           type="text"
           id="estateName"
           name="estateName"
+          onKeyUp={HandleRamdomId}
           placeholder="Estate Name"
           value={props.estateName}
           onChange={props.handleChange}
@@ -251,6 +254,7 @@ function Step2(props) {
           id="emailId"
           name="emailId"
           placeholder="Estate ID"
+          readOnly
           value={props.emailId}
           onChange={props.handleChange}
         />
@@ -265,6 +269,17 @@ function Step2(props) {
       </button>
     </div>
   );
+}
+function generateID(length) {
+  let text = "";
+  const possible =
+    "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+  for (let i = 0; i < length; i++) {
+    text += possible.charAt(Math.floor(Math.random() * possible.length));
+  }
+
+  return text;
 }
 
 const returnSuccessMessage = ({ open, onClose }) => {

@@ -5,13 +5,15 @@ import { SVGs } from "../assets/svg/SVGs";
 const Overview_card = () => {
   const PerOverview = (props) => {
     return (
-      <Link to={props.link} className="grid-row per_overview">
+      <div className="grid-row per_overview">
         <img src={props.img} alt="" />
+        {/* <Link to={props.link}> */}
         <div className="num">
           <p>{props.type}</p>
           <h3>{props.count}</h3>
         </div>
-      </Link>
+        {/* </Link> */}
+      </div>
     );
   };
   return (

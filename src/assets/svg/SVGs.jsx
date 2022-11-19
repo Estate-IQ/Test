@@ -1,4 +1,8 @@
 export const SVGs = {
+  Email: require("../svg/emailGroup.svg").default,
+  Call: require("../svg/callGroup.svg").default,
+  ActivitySvg: require("../svg/activitySVG.svg").default,
+  ActivityEntry: require("../svg/Entry.svg").default,
   brand_name: require("../svg/brand_name.svg").default,
   brand_logo: require("../svg/brand_logo.svg").default,
   delete: require("../svg/delete.svg").default,
