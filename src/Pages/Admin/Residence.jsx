@@ -2,11 +2,12 @@ import React, { useState } from "react";
 // import JsonData from '../Mock-API.json'
 import ReactPaginate from "react-paginate"; //  Using react-paginate from the react library
 import styled from "styled-components";
-import AddNewResidence from "./AddNew";
-import GNavbar from "../../../components/Navbar/A-Navigator";
-import Mobile from "../../../components/Navbar/Navbar";
-import TopNav from "../../../components/Navbar/AdminNav";
-import { SVGs } from "../../../assets/svg/SVGs";
+import AddNewResidence from "../../components/AddNew";
+import AddBoardMember from "../../components/AddBoardMember";
+import GNavbar from "../../components/Navbar/A-Navigator";
+import Mobile from "../../components/Navbar/Navbar";
+import TopNav from "../../components/Navbar/AdminNav";
+import { SVGs } from "../../assets/svg/SVGs";
 
 function AdminResidence() {
   const [events, setEvents] = useState(API.slice(0, 20));
@@ -15,6 +16,7 @@ function AdminResidence() {
   const [pageNumber, setPageNumber] = useState(0); // state representing the page we are on
   const [searchTerm, setSearchTerm] = useState("");
   const [openModal, setOpenModal] = useState(false); // state for Modal
+  const [board, setBoardMember] = useState(false); // state for Modal
   const [selected, setSelected] = useState("Filter");
   const [activeIndex, setActiveIndex] = useState(1);
   const handleClick = (index) => setActiveIndex(index);
@@ -127,7 +129,7 @@ function AdminResidence() {
         </div>
         {isActive && (
           <div className="select_content">
-            {/* Advert */}
+            {/* Add Resident */}
             <div
               className="select_items"
               onClick={(e) => {
@@ -137,16 +139,16 @@ function AdminResidence() {
             >
               <p onClick={() => setOpenModal(true)}>Add Residence</p>
             </div>
-            {/* Announcement */}
-            {/* <div
+            {/* Add Board Member */}
+            <div
               className="select_items"
               onClick={(e) => {
-                setSelected("View SOS Contact");
+                setSelected("Board Member");
                 setIsActive(false);
               }}
             >
-              <p>View SOS Contact</p>
-            </div> */}
+              <p onClick={() => setBoardMember(true)}>Add Board Member</p>
+            </div>
           </div>
         )}
       </div>
@@ -158,6 +160,7 @@ function AdminResidence() {
         <GNavbar residence="active_tab" />
         <Mobile />
         <AddNewResidence open={openModal} onClose={() => setOpenModal(false)} />
+        <AddBoardMember open={board} onClose={() => setBoardMember(false)} />
         <div className="selected_tab">
           <TopNav />
           <div className="dashboard_container">
@@ -309,7 +312,11 @@ const Action = ({ selected, setSelected }) => {
         }
       }}
     >
-      <div className="select-btn" onClick={(e) => setIsActive(!isActive)}>
+      <div
+        className="select-btn"
+        id={selected === "Enabled" ? "greenBg" : "redBg"}
+        onClick={(e) => setIsActive(!isActive)}
+      >
         <input type="text" readOnly class="checked_value" />
         <span className="default_status">{selected}</span>
 
@@ -326,6 +333,9 @@ const Action = ({ selected, setSelected }) => {
               onClick={(e) => {
                 // setSelected(option);
                 setIsActive(false);
+                e.target.parentElement.parentElement.querySelector(
+                  ".select-btn"
+                ).id = e.target.textContent === "Enabled" ? "greenBg" : "redBg";
               }}
             >
               {option}
@@ -568,7 +578,7 @@ const API = [
     last_name: "Hamper",
     address: "235 Ruskin Lane",
     category: "Security",
-    mode: "Enable",
+    mode: "Enabled",
     phone: "(604) 8295261",
     email: "ehamper1@amazon.com",
     estate_id: 4474,
@@ -579,7 +589,7 @@ const API = [
     last_name: "Vanni",
     address: "354 Garrison Terrace",
     category: "Security",
-    mode: "Enable",
+    mode: "Enabled",
     phone: "(939) 5668611",
     email: "mvanni2@hud.gov",
     estate_id: 2122,
@@ -590,7 +600,7 @@ const API = [
     last_name: "Bankhurst",
     address: "67439 Swallow Terrace",
     category: "Security",
-    mode: "Enable",
+    mode: "Enabled",
     phone: "(580) 7558861",
     email: "hbankhurst3@infoseek.co.jp",
     estate_id: 5624,
@@ -623,7 +633,7 @@ const API = [
     last_name: "Brayson",
     address: "391 Bunting Junction",
     category: "Security",
-    mode: "Enable",
+    mode: "Enabled",
     phone: "(826) 3043585",
     email: "nbrayson6@geocities.com",
     estate_id: 1864,
@@ -634,7 +644,7 @@ const API = [
     last_name: "Stroban",
     address: "0810 Lyons Crossing",
     category: "Security",
-    mode: "Enable",
+    mode: "Enabled",
     phone: "(305) 8376974",
     email: "astroban7@reddit.com",
     estate_id: 4768,
@@ -689,7 +699,7 @@ const API = [
     last_name: "Tharme",
     address: "8360 Oriole Road",
     category: "Security",
-    mode: "Enable",
+    mode: "Enabled",
     phone: "(425) 7792655",
     email: "gtharmec@ucla.edu",
     estate_id: 2462,
@@ -711,7 +721,7 @@ const API = [
     last_name: "Derye-Barrett",
     address: "0 Prentice Pass",
     category: "Security",
-    mode: "Enable",
+    mode: "Enabled",
     phone: "(447) 2871402",
     email: "ederyebarrette@china.com.cn",
     estate_id: 4146,
@@ -722,7 +732,7 @@ const API = [
     last_name: "Tieraney",
     address: "0 Rieder Street",
     category: "Vendors",
-    mode: "Enable",
+    mode: "Enabled",
     phone: "(216) 1781191",
     email: "mtieraneyf@globo.com",
     estate_id: 3244,
@@ -766,7 +776,7 @@ const API = [
     last_name: "Barents",
     address: "20 Pearson Park",
     category: "Vendors",
-    mode: "Enable",
+    mode: "Enabled",
     phone: "(922) 6753834",
     email: "dbarentsj@ihg.com",
     estate_id: 7764,
@@ -777,7 +787,7 @@ const API = [
     last_name: "Blasi",
     address: "02250 Stuart Junction",
     category: "Security",
-    mode: "Enable",
+    mode: "Enabled",
     phone: "(418) 7226862",
     email: "fblasik@miitbeian.gov.cn",
     estate_id: 7014,
@@ -788,7 +798,7 @@ const API = [
     last_name: "Foster",
     address: "53 Schlimgen Crossing",
     category: "Security",
-    mode: "Enable",
+    mode: "Enabled",
     phone: "(529) 8552668",
     email: "rfosterl@opera.com",
     estate_id: 3051,
@@ -832,7 +842,7 @@ const API = [
     last_name: "Tuckerman",
     address: "210 Prentice Drive",
     category: "Security",
-    mode: "Enable",
+    mode: "Enabled",
     phone: "(208) 1213459",
     email: "stuckermanp@xinhuanet.com",
     estate_id: 7594,
@@ -854,7 +864,7 @@ const API = [
     last_name: "How",
     address: "284 Victoria Point",
     category: "Vendors",
-    mode: "Enable",
+    mode: "Enabled",
     phone: "(729) 7160410",
     email: "chowr@icio.us",
     estate_id: 7566,
@@ -865,7 +875,7 @@ const API = [
     last_name: "Halgarth",
     address: "63 Amoth Circle",
     category: "Security",
-    mode: "Enable",
+    mode: "Enabled",
     phone: "(870) 3678009",
     email: "dhalgarths@dagondesign.com",
     estate_id: 5091,
@@ -909,7 +919,7 @@ const API = [
     last_name: "Friedenbach",
     address: "4 Green Point",
     category: "Vendors",
-    mode: "Enable",
+    mode: "Enabled",
     phone: "(243) 7047026",
     email: "ffriedenbachw@theatlantic.com",
     estate_id: 7144,
@@ -942,7 +952,7 @@ const API = [
     last_name: "Renyard",
     address: "21 International Junction",
     category: "Vendors",
-    mode: "Enable",
+    mode: "Enabled",
     phone: "(818) 8729331",
     email: "brenyardz@bloglines.com",
     estate_id: 3790,
@@ -975,7 +985,7 @@ const API = [
     last_name: "Alexsandrowicz",
     address: "28967 Dapin Parkway",
     category: "Vendors",
-    mode: "Enable",
+    mode: "Enabled",
     phone: "(784) 5052861",
     email: "jalexsandrowicz12@opensource.org",
     estate_id: 1708,
@@ -986,7 +996,7 @@ const API = [
     last_name: "Beldum",
     address: "228 Karstens Street",
     category: "Security",
-    mode: "Enable",
+    mode: "Enabled",
     phone: "(921) 7636748",
     email: "abeldum13@blogger.com",
     estate_id: 8967,
@@ -1008,7 +1018,7 @@ const API = [
     last_name: "Galbreath",
     address: "0436 Fallview Pass",
     category: "Vendors",
-    mode: "Enable",
+    mode: "Enabled",
     phone: "(361) 8764416",
     email: "dgalbreath15@xrea.com",
     estate_id: 7805,
@@ -1019,7 +1029,7 @@ const API = [
     last_name: "Day",
     address: "663 Continental Alley",
     category: "Security",
-    mode: "Enable",
+    mode: "Enabled",
     phone: "(111) 4358507",
     email: "dday16@w3.org",
     estate_id: 4103,
@@ -1030,7 +1040,7 @@ const API = [
     last_name: "Salmon",
     address: "59 Bluestem Court",
     category: "Security",
-    mode: "Enable",
+    mode: "Enabled",
     phone: "(936) 6832591",
     email: "jsalmon17@ucsd.edu",
     estate_id: 3909,
@@ -1041,7 +1051,7 @@ const API = [
     last_name: "Standidge",
     address: "06574 Mosinee Hill",
     category: "Security",
-    mode: "Enable",
+    mode: "Enabled",
     phone: "(622) 6092950",
     email: "rstandidge18@examiner.com",
     estate_id: 7358,
@@ -1063,7 +1073,7 @@ const API = [
     last_name: "Kondrat",
     address: "75380 Eggendart Pass",
     category: "Vendors",
-    mode: "Enable",
+    mode: "Enabled",
     phone: "(518) 3110657",
     email: "akondrat1a@who.int",
     estate_id: 7877,
@@ -1096,7 +1106,7 @@ const API = [
     last_name: "Gligoraci",
     address: "7979 North Road",
     category: "Security",
-    mode: "Enable",
+    mode: "Enabled",
     phone: "(873) 8350460",
     email: "ngligoraci1d@smugmug.com",
     estate_id: 9372,

@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
-import { SVGs } from "../../../assets/svg/SVGs";
-import Frequency from "../../../components/Frequency";
-import CollectionTarget from "../../../components/CollectionTarget";
-import States from "../../../components/Location";
+import { SVGs } from "../assets/svg/SVGs";
+import Frequency from "./Frequency";
+import CollectionTarget from "./CollectionTarget";
+import CollectionType from "./CollectionType";
+import styled from "styled-components";
+// import States from "../../../components/Location";
 // import LGAs from "../../../components/States/State";
 
 class CreateCollection extends React.Component {
@@ -20,7 +22,7 @@ class CreateCollection extends React.Component {
       date: "",
       bank: "",
       collectionAmount: "",
-      accountName: "",
+      date: "",
       state: "",
     };
     this.handleSearch = this.handleSearch.bind(this);
@@ -117,8 +119,8 @@ class CreateCollection extends React.Component {
           // action="/profile"
           className="new_estates_form swing-in-bottom-fwd"
         >
-          <p>Step {this.state.currentStep} of 2</p>
-
+          {/* <p>Step {this.state.currentStep} of 2</p> */}
+          {/* 
           <Step1
             currentStep={this.state.currentStep}
             handleChange={this.handleChange}
@@ -128,28 +130,24 @@ class CreateCollection extends React.Component {
             password={this.state.password}
             C_password={this.state.C_password}
             date={this.state.date}
-          />
+          /> */}
           <Step2
             currentStep={this.state.currentStep}
             handleChange={this.handleChange}
-            accountName={this.state.accountName}
+            date={this.state.date}
             collectionAmount={this.state.collectionAmount}
             accountNumber={this.state.accountNumber}
             bank={this.state.bank}
           />
-          <div className="control_btn">
-            {this.previousButton()}
-            {this.nextButton()}
-          </div>
         </form>
       </React.Fragment>
     );
   }
 }
 
-function Step1(props) {
-  const [selected, setSelected] = useState("Select Collection Frequency");
-  const [collectionTarget, setCollectionTarget] = useState("Collection Target");
+function Step2(props) {
+  const [selected, setSelected] = useState("Penalty For");
+
   if (props.currentStep !== 1) {
     return null;
   }
@@ -157,97 +155,95 @@ function Step1(props) {
     <div className="form-group">
       <div className="create_est ">
         <div className="form_txt">
-          <h3>Define Collection</h3>
-          <h4>Collection Info</h4>
+          <h3 className="h3head">Edit Penalties</h3>
+          {/* <h4>Payment Info</h4> */}
         </div>
-        <input
-          type="text"
-          id="firstName"
-          value={props.firstName}
-          onChange={props.handleChange}
-          name="firstName"
-          placeholder="Collection Name"
-        />
-        <input
-          type="text"
-          placeholder="Last Name"
-          id="lastName"
-          value={props.lastName}
-          onChange={props.handleChange}
-          name="lastName"
-        />
-        <Frequency selected={selected} setSelected={setSelected} />
-        <CollectionTarget
-          selected={collectionTarget}
-          setSelected={setCollectionTarget}
-        />
+
+        <CollectionType selected={selected} setSelected={setSelected} />
+
         <input
           type="date"
           id="date"
           name="date"
-          placeholder="Due Date"
-          value={props.date}
-          onChange={props.handleChange}
-        />
-      </div>
-    </div>
-  );
-}
-
-function Step2(props) {
-  if (props.currentStep !== 2) {
-    return null;
-  }
-  return (
-    <div className="form-group">
-      <div className="create_est ">
-        <div className="form_txt">
-          <h3>Define Collection</h3>
-          <h4>Payment Info</h4>
-        </div>
-        <input
-          type="text"
-          id="bank"
-          name="bank"
-          onKeyUp={HandleRamdomId}
-          placeholder="Bank"
-          value={props.bank}
-          onChange={props.handleChange}
-        />
-        <input
-          type="number"
-          id="accountNumber"
-          name="accountNumber"
-          placeholder="Account Number"
-          value={props.accountNumber}
-          onChange={props.handleChange}
-        />
-        <input
-          type="text"
-          id="accountName"
-          name="accountName"
           placeholder="Account Name"
-          value={props.accountName}
+          value={props.date}
           onChange={props.handleChange}
           required
         />
-        <input
-          type="text"
-          id="collectionAmount"
-          name="collectionAmount"
-          placeholder="Collection Amount"
-          readOnly
-          value={props.collectionAmount}
-          onChange={props.handleChange}
-        />
-
+        <RevokeAccess>
+          <h2>Revoke</h2>
+          <div className="each_access">
+            <div class="cntr">
+              <label for="cbx" class="label-cbx">
+                <input
+                  id="cbx"
+                  name="cbx"
+                  type="checkbox"
+                  class="invisible"
+                  value={props.agree}
+                  onChange={props.agree}
+                  checked
+                />
+                <div class="checkbox">
+                  <svg width="20px" height="20px" viewBox="0 0 20 20">
+                    <path d="M3,1 L17,1 L17,1 C18.1045695,1 19,1.8954305 19,3 L19,17 L19,17 C19,18.1045695 18.1045695,19 17,19 L3,19 L3,19 C1.8954305,19 1,18.1045695 1,17 L1,3 L1,3 C1,1.8954305 1.8954305,1 3,1 Z"></path>
+                    <polyline points="4 11 8 15 16 6"></polyline>
+                  </svg>
+                </div>
+              </label>
+              <span>Gate Pass</span>
+            </div>
+          </div>
+          <div className="each_access">
+            <div class="cntr">
+              <label for="util" class="label-cbx">
+                <input
+                  id="util"
+                  name="util"
+                  type="checkbox"
+                  class="invisible"
+                  value={props.agree}
+                  onChange={props.agree}
+                />
+                <div class="checkbox">
+                  <svg width="20px" height="20px" viewBox="0 0 20 20">
+                    <path d="M3,1 L17,1 L17,1 C18.1045695,1 19,1.8954305 19,3 L19,17 L19,17 C19,18.1045695 18.1045695,19 17,19 L3,19 L3,19 C1.8954305,19 1,18.1045695 1,17 L1,3 L1,3 C1,1.8954305 1.8954305,1 3,1 Z"></path>
+                    <polyline points="4 11 8 15 16 6"></polyline>
+                  </svg>
+                </div>
+              </label>
+              <span>Utility Portal</span>
+            </div>
+          </div>
+          <div className="each_access">
+            <div class="cntr">
+              <label for="emergency" class="label-cbx">
+                <input
+                  id="emergency"
+                  name="emergency"
+                  type="checkbox"
+                  class="invisible"
+                  value={props.agree}
+                  onChange={props.agree}
+                />
+                <div class="checkbox">
+                  <svg width="20px" height="20px" viewBox="0 0 20 20">
+                    <path d="M3,1 L17,1 L17,1 C18.1045695,1 19,1.8954305 19,3 L19,17 L19,17 C19,18.1045695 18.1045695,19 17,19 L3,19 L3,19 C1.8954305,19 1,18.1045695 1,17 L1,3 L1,3 C1,1.8954305 1.8954305,1 3,1 Z"></path>
+                    <polyline points="4 11 8 15 16 6"></polyline>
+                  </svg>
+                </div>
+              </label>
+              <span>Emergency services</span>
+            </div>
+          </div>
+        </RevokeAccess>
         {/* <States handleSearch={props.handleSearch} state={props.state} /> */}
       </div>
       <button
         onClick={returnSuccessMessage}
         className="btn btn-success btn-block"
       >
-        Create Collection
+        Create Penalty
       </button>
     </div>
   );
@@ -310,3 +306,15 @@ const Modal = ({ open, onClose }) => {
   );
 };
 export default Modal;
+
+let RevokeAccess = styled.div`
+  h2 {
+    font-size: 20px;
+    color: red;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  .cntr {
+    margin-top: 10px;
+  }
+`;

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import CreateSOS from "../Pages/Admin/Dashboard/CreateSOS";
+import CreateSOS from "./CreateSOS";
 import SetEmergency from "./SetEmergency";
 
 const D_Filter = () => {

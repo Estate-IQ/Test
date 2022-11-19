@@ -2,21 +2,23 @@ import React, { useState } from "react";
 // import JsonData from '../Mock-API.json'
 import ReactPaginate from "react-paginate"; //  Using react-paginate from the react library
 import styled from "styled-components";
-import AddPenalties from "./CreateCollection";
-import AdminTransactionAction from "../../../components/AdminTransactionAction";
-import GNavbar from "../../../components/Navbar/A-Navigator";
-import Mobile from "../../../components/Navbar/Navbar";
-import TopNav from "../../../components/Navbar/AdminNav";
-import { SVGs } from "../../../assets/svg/SVGs";
-import AdminTransactionTable from "../../../components/AdminTransactionTable";
-// import SetUpPK from "../../../components/SetUpPenalties";
+import AddPenalties from "../../components/CreateCollection";
+import EditCollection from "../../components/EditCollection";
+import AdminTransactionAction from "../../components/AdminTransactionAction";
+import GNavbar from "../../components/Navbar/A-Navigator";
+import Mobile from "../../components/Navbar/Navbar";
+import TopNav from "../../components/Navbar/AdminNav";
+
+import AdminTransactionTable from "../../components/AdminTransactionTable";
+// import SetUpPK from "./SetUpPenalties";
 
 function AdminTransaction() {
   const [events, setEvents] = useState(API.slice(0, 20));
 
   const [value, setvalue] = useState("");
-  const [penalty, setPenalty] = useState(false);
   const [emergency, setEmergency] = useState("Penalties");
+  const [penalty, setPenalty] = useState(false);
+  const [edit, setEditCollection] = useState(false); // state for Modal
   const [pageNumber, setPageNumber] = useState(0); // state representing the page we are on
   const [searchTerm, setSearchTerm] = useState("");
   const [openModal, setOpenModal] = useState(false); // state for Modal
@@ -71,7 +73,12 @@ function AdminTransaction() {
               </div>
             </div>
             <div className="btn">
-              <span className="edit-btn">Edit</span>
+              <span
+                className="edit-btn"
+                onClick={() => setEditCollection(true)}
+              >
+                Edit
+              </span>
               <span className="del-btn">Delete</span>
             </div>
           </div>
@@ -91,7 +98,8 @@ function AdminTransaction() {
       <section className="change_ratio">
         <GNavbar transaction="active_tab" />
         <Mobile />
-        {/* <AddNewUtilities open={openModal} onClose={() => setOpenModal(false)} /> */}
+        <EditCollection open={edit} onClose={() => setEditCollection(false)} />
+
         <div className="selected_tab">
           <TopNav />
           <div className="dashboard_container">

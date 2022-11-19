@@ -1,9 +1,6 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
-import { SVGs } from "../../../assets/svg/SVGs";
-import States from "../../../components/Location";
-// import LGAs from "../../../components/States/State";
 
 class MasterForm extends React.Component {
   constructor(props) {

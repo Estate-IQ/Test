@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import CreateSOS from "../Pages/Admin/Transaction/CreateCollection";
+import CreateSOS from "./CreateCollection";
 import PKModal from "./PenaltyModal";
-import CollectionView from "./SetPenaltyView";
+import CollectionView from "./SetCollectionView";
 import PenaltyView from "./SetPenaltyView";
 
 const SettingUpTransactionDecisions = () => {
@@ -135,10 +135,10 @@ const SettingUpTransactionDecisions = () => {
 
       <CreateSOS open={newCollection} onClose={() => setnewCollection(false)} />
       <PKModal open={penalty} onClose={() => setnewPenalty(false)} />
-      {/* <CollectionView
+      <CollectionView
         open={collectionView}
         onClose={() => setCollectionView(false)}
-      /> */}
+      />
       <PenaltyView open={penaltyView} onClose={() => setPenaltyView(false)} />
       {/* <Reminder open={reminder} onClose={() => setReminder(false)} /> */}
     </OnboardingTag>
@@ -160,10 +160,10 @@ let OnboardingTag = styled.div`
   }
   .outlined {
     .select-btn {
-      border: 1px solid red;
+      border: 1px solid red !important;
 
       border-radius: 5px;
-      background: transparent;
+      background: transparent !important;
       color: red;
     }
   }

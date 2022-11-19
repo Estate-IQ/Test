@@ -48,7 +48,7 @@ const LatestResidence = () => {
       <div className="latest_estate">
         <div className="ff_heading">
           <h4>Newest Residence</h4>
-          <Link to="">See more</Link>
+          <Link to="/admin/residence">See more</Link>
         </div>
         <PerNewEstate
           estateimg={Images.blog2}

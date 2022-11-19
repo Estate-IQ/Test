@@ -5,6 +5,7 @@ import { Images } from "../../../assets/images/Images";
 import GNavbar from "../../../components/Navbar/S-Navigator";
 import Mobile from "../../../components/Navbar/Navbar";
 import Packages from "../../../components/Packages";
+import SuperUtility from "../../../components/SuperUtility";
 
 const Permission = () => {
   const [openModal, setOpenModal] = useState(false);
@@ -48,6 +49,8 @@ const Permission = () => {
             </button>
           </div>
           <Packages />
+
+          <SuperUtility />
         </div>
         <Modal open={openModal} onClose={() => setOpenModal(false)} />
       </section>

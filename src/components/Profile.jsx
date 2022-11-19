@@ -6,6 +6,7 @@ import call from "../assets/svg/call_a.svg";
 import { Images } from "../assets/images/Images";
 import GNavbar from "./Navbar/S-Navigator";
 import Mobile from "../components/Navbar/Navbar";
+import { Link } from "react-router-dom";
 
 const Profile = () => {
   // SEARCH INPUT
@@ -62,8 +63,8 @@ const Profile = () => {
                     </div>
 
                     <div className="activity_log">
-                      <a href="#">Activity Log</a>
-                      <a href="#">Invoice</a>
+                      <Link to="/superadmin/activitylog">Activity Log</Link>
+                      <Link to="/superadmin/activitylog">Invoice</Link>
                     </div>
                   </div>
                 </div>

@@ -4,11 +4,12 @@ import "./assets/css/style.css";
 import "./assets/css/estate.css";
 
 // ADMIN
-import AdminOverview from "./Pages/Admin/Dashboard/A-Overview";
-import AdminResidence from "./Pages/Admin/Residence/Residence";
-import AdminUtilities from "./Pages/Admin/Utilities/Utilities";
-import AdminTransaction from "./Pages/Admin/Transaction/AdminTransaction";
-import AdminActivityLog from "./Pages/Admin/ActivityLog/Activity";
+import AdminOverview from "./Pages/Admin/A-Overview";
+import AdminResidence from "./Pages/Admin/Residence";
+import AdminUtilities from "./Pages/Admin/Utilities";
+import AdminTransaction from "./Pages/Admin/AdminTransaction";
+import AdminActivityLog from "./Pages/Admin/Activity";
+import AdminComplaint from "./Pages/Admin/AdminComplains";
 
 // ===================
 
@@ -19,12 +20,12 @@ import CreateEstate from "./Pages/Authentication/CreateEstate";
 import EstateProfile from "./components/Profile";
 import EditPackage from "./Pages/SuperAdmin/Permissions/Edit";
 import SuperAdminOverview from "./Pages/SuperAdmin/S-Overview";
+import SuperActivityLog from "./Pages/SuperAdmin/Estates/ActivityLog";
 import SuperAdminEstate from "./Pages/SuperAdmin/Estates/Estate";
 import SuperAdminTask from "./Pages/SuperAdmin/Tasks/Task";
 import SuperAdminPermission from "./Pages/SuperAdmin/Permissions/Permission";
 // import SuperAdminComplaint from "./Pages/SuperAdmin/Complaints/Complaint";
 import SuperAdminComplaint from "./Pages/SuperAdmin/Complaints/R-Complaint";
-import AdminComplaint from "./Pages/Admin/Complaints/R-Complaint";
 import ResetPassword from "./components/ResetPassword/ResetPassword";
 import UpdatePassword from "./components/ResetPassword/ResetPassword2";
 
@@ -53,6 +54,10 @@ function App() {
           {/* SUPERADMIN */}
           <Route index element={<SuperAdminOverview />} />
           <Route path="/superadmin-estate" element={<SuperAdminEstate />} />
+          <Route
+            path="/superadmin/activitylog"
+            element={<SuperActivityLog />}
+          />
           <Route path="/superadmin-tasks" element={<SuperAdminTask />} />
           <Route
             path="/superadmin-permission"

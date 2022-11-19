@@ -2,10 +2,9 @@ import React, { useState } from "react";
 // import JsonData from '../Mock-API.json'
 import ReactPaginate from "react-paginate"; //  Using react-paginate from the react library
 import styled from "styled-components";
-import GNavbar from "../../../components/Navbar/A-Navigator";
-import Mobile from "../../../components/Navbar/Navbar";
-import TopNav from "../../../components/Navbar/AdminNav";
-import { SVGs } from "../../../assets/svg/SVGs";
+import GNavbar from "../../components/Navbar/A-Navigator";
+import Mobile from "../../components/Navbar/Navbar";
+import TopNav from "../../components/Navbar/AdminNav";
 
 function AdminActivityLog() {
   const [events, setEvents] = useState(API.slice(0, 20));

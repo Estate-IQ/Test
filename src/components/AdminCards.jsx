@@ -31,7 +31,7 @@ const Overview_card = () => {
         img={SVGs.complains}
         type="Complaints"
         count="2"
-        link="/superadmin-complaint"
+        link="/admin/complaint"
       />
     </OverviewRap>
   );

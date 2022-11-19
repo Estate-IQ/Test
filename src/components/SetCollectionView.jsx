@@ -1,15 +1,15 @@
 import React, { useState } from "react";
 import { SVGs } from "../assets/svg/SVGs";
 import styled from "styled-components";
-import CollectionTableModal from "./PenaltyTable";
+import CollectionTableList from "./CollectionList";
 // import States from "../../../components/Location";
 // import LGAs from "../../../components/States/State";
 
-const SetPenaltyView = () => {
+const CollectionView = () => {
   return (
     <ColletionTable>
-      <h3>Collections</h3>
-      <CollectionTableModal />
+      <h3 className="major">Collections</h3>
+      <CollectionTableList />
     </ColletionTable>
   );
 };
@@ -24,7 +24,7 @@ const Modal = ({ open, onClose }) => {
         }}
         className="modalContainer"
       >
-        <SetPenaltyView />
+        <CollectionView />
         <img src={SVGs.close} alt="" onClick={onClose} />
       </ModalContainer>
     </HandleBlur>
@@ -46,7 +46,7 @@ let ColletionTable = styled.section`
   .change_ratio {
     display: block;
   }
-  h3 {
+  .major {
     font-size: 20px;
     font-weight: bold;
     margin-bottom: 5px;

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import Swal from "sweetalert2";
-import { SVGs } from "../../../assets/svg/SVGs";
+import { SVGs } from "../assets/svg/SVGs";
 
 const handleSubmit = (event) => {
   event.preventDefault();

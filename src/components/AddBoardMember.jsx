@@ -1,6 +1,9 @@
 import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
+import BoardType from "./BoardType";
 
-import Frequency from "../../../components/Frequency";
+// import LGAs from "../../../components/States/State";
 
 class MasterForm extends React.Component {
   constructor(props) {
@@ -46,12 +49,12 @@ class MasterForm extends React.Component {
     // `);
 
     console.log(residentType);
-    // Swal.fire({
-    //   title: `A mail has been sent to <h4>${email}</h4> for verification `,
-    //   icon: "success",
-    //   showConfirmButton: true,
-    //   showCloseButton: true,
-    // });
+    Swal.fire({
+      title: `A mail has been sent to <h4>${email}</h4> for verification `,
+      icon: "success",
+      showConfirmButton: true,
+      showCloseButton: true,
+    });
 
     // useNavigate("/profile", { replace: true });
 
@@ -85,43 +88,87 @@ class MasterForm extends React.Component {
 }
 
 function Step2(props) {
-  const [selected, setSelected] = useState("Payment Frequency");
+  const [selected, setSelected] = useState("Board Type");
   if (props.currentStep !== 1) {
     return null;
   }
-
   return (
     <div className="form-group">
       <div className="create_est ">
         <div className="form_txt single_form">
-          <h1>Add Utility</h1>
+          <h1>Add Board Member</h1>
         </div>
-        <SearchField
-          handleSearch={props.handleSearch}
-          residentType={props.residentType}
+        <BoardType selected={selected} setSelected={setSelected} />
+        <input
+          type="text"
+          id="firstName"
+          value={props.firstName}
+          onChange={props.handleChange}
+          name="firstName"
+          placeholder="First Name"
         />
         <input
           type="text"
-          id="cost"
-          value={props.cost}
+          placeholder="Last Name"
+          id="lastName"
+          value={props.lastName}
           onChange={props.handleChange}
-          name="cost"
-          placeholder="Utility Cost"
+          name="lastName"
         />
         <input
-          type="date"
-          placeholder="Payment Due Date"
-          id="date"
-          value={props.date}
+          type="email"
+          id="email"
+          name="email"
+          placeholder="Email"
+          value={props.email}
           onChange={props.handleChange}
-          name="date"
+          required
         />
-        <Frequency selected={selected} setSelected={setSelected} />
+        <input
+          type="number"
+          id="mobile"
+          name="mobile"
+          placeholder="Mobile"
+          value={props.mobile}
+          onChange={props.handleChange}
+        />
       </div>
-      <button className="btn btn-success btn-block">Add Utility</button>
+      <button
+        onClick={returnSuccessMessage}
+        className="btn btn-success btn-block"
+      >
+        Send Invite
+      </button>
     </div>
   );
 }
+
+const returnSuccessMessage = ({ open, onClose }) => {
+  // if (!open) return null;
+  return (
+    <div onClick={onClose} className="bills_on_me">
+      {/* ===========
+      SUCESS MESSAGE
+      ============== */}
+      <div
+        className="success_message slide-in-top"
+        onClick={(e) => {
+          e.stopPropagation();
+        }}
+      >
+        <p>
+          Your have successfully added a new Estate.
+          <span>You can check your Estate list to see them</span>
+        </p>
+        <Link to="/profile">
+          <button onClick={onClose} className="important-btn">
+            View
+          </button>
+        </Link>
+      </div>
+    </div>
+  );
+};
 
 const Modal = ({ open, onClose }) => {
   if (!open) return null;
@@ -147,6 +194,7 @@ export default Modal;
 
 const SearchField = (props) => {
   const [value, setValue] = useState("");
+  const [isActive, setIsActive] = useState(false);
 
   const onChange = (event) => {
     setValue(event.target.value);
@@ -155,6 +203,7 @@ const SearchField = (props) => {
   const onSearch = (searchTerm) => {
     setValue(searchTerm);
     props.handleSearch(searchTerm);
+
     // our api to fetch the search result
     console.log("search ", searchTerm);
   };
@@ -162,38 +211,41 @@ const SearchField = (props) => {
   return (
     <div className="">
       <div className="custom_search">
-        <div className="search-inner">
+        <div className="search-inner" onClick={(e) => setIsActive(!isActive)}>
           <input
             type="text"
             value={value}
             onChange={onChange}
-            placeholder="Search Utility"
+            onKeyDown={onChange}
+            placeholder="Resident Type (e.g Vendor, Security, Resident Member)"
           />
           {/* <button onClick={() => onSearch(value)}> Search </button> */}
         </div>
-        <div className="search_result">
-          {data
-            .filter((item) => {
-              const searchTerm = value.toLowerCase();
-              const fullName = item.toLowerCase();
+        {isActive && (
+          <div className="search_result" id="Drop">
+            {data
+              .filter((item) => {
+                const searchTerm = value.toLowerCase();
+                const fullName = item.toLowerCase();
 
-              return (
-                searchTerm &&
-                fullName.startsWith(searchTerm) &&
-                fullName !== searchTerm
-              );
-            })
-            .slice(0, 10)
-            .map((item) => (
-              <div
-                onClick={() => onSearch(item)}
-                className="drop_items"
-                key={item}
-              >
-                {item}
-              </div>
-            ))}
-        </div>
+                return (
+                  searchTerm &&
+                  fullName.startsWith(searchTerm) &&
+                  fullName !== searchTerm
+                );
+              })
+              .slice(0, 10)
+              .map((item) => (
+                <div
+                  onClick={() => onSearch(item)}
+                  className="drop_items"
+                  key={item}
+                >
+                  {item}
+                </div>
+              ))}
+          </div>
+        )}
       </div>
     </div>
   );
@@ -210,4 +262,4 @@ const SearchField = (props) => {
 //     console.log("state", this.state.clouds);
 //   })
 //   .catch((error) => console.log(error));
-let data = ["Gym", "Power", "Security"];
+let data = ["Resident Member", "Vendors", "Security"];

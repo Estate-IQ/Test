@@ -2,11 +2,11 @@ import React, { useState } from "react";
 // import JsonData from '../Mock-API.json'
 import ReactPaginate from "react-paginate"; //  Using react-paginate from the react library
 import styled from "styled-components";
-import GNavbar from "../../../components/Navbar/A-Navigator";
-import Mobile from "../../../components/Navbar/Navbar";
-import TopNav from "../../../components/Navbar/AdminNav";
+import GNavbar from "../../components/Navbar/A-Navigator";
+import Mobile from "../../components/Navbar/Navbar";
+import TopNav from "../../components/Navbar/AdminNav";
 
-function SuperAdminComplaint() {
+function AdminComplains() {
   const [events, setEvents] = useState(API.slice(0, 20));
   const [value, setvalue] = useState("");
 
@@ -193,7 +193,7 @@ function SuperAdminComplaint() {
   );
 }
 
-export default SuperAdminComplaint;
+export default AdminComplains;
 
 const Action = ({ selected, setSelected }) => {
   const [isActive, setIsActive] = useState(false);
@@ -217,7 +217,11 @@ const Action = ({ selected, setSelected }) => {
         }
       }}
     >
-      <div className="select-btn" onClick={(e) => setIsActive(!isActive)}>
+      <div
+        className="select-btn"
+        id={selected === "Resolved" ? "greenBg" : "redBg"}
+        onClick={(e) => setIsActive(!isActive)}
+      >
         <input type="text" readOnly class="checked_value" />
         <span className="default_status">{selected}</span>
 
@@ -234,6 +238,10 @@ const Action = ({ selected, setSelected }) => {
               onClick={(e) => {
                 // setSelected(option);
                 setIsActive(false);
+                e.target.parentElement.parentElement.querySelector(
+                  ".select-btn"
+                ).id =
+                  e.target.textContent === "Resolved" ? "greenBg" : "redBg";
               }}
             >
               {option}
@@ -292,7 +300,7 @@ const HandleSearchAndTab = styled.section`
       justify-content: center;
       padding: 0;
       min-width: 100px;
-      padding: 5px 20px;
+
       text-align: center;
       margin-right: 15px;
       border-bottom: 3px solid #c0c0c0;

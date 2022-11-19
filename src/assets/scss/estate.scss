@@ -84,6 +84,9 @@ $submit-color-darker: #00824a;
     left: 35px;
     top: 45px;
   }
+  img {
+    margin-bottom: 60px !important;
+  }
 }
 .changeAdmin {
   font-family: var(--Satoshi);
@@ -439,6 +442,7 @@ $submit-color-darker: #00824a;
   justify-content: space-between;
   .note_bell {
     width: 40px;
+    cursor: pointer;
     height: 40px;
     margin-top: 7px;
     margin-right: 15px;
@@ -652,11 +656,10 @@ $submit-color-darker: #00824a;
       line-height: 16px;
       letter-spacing: 0em;
       text-align: left;
-      padding-bottom: 7px;
+      padding: 5px 10px !important;
       border-radius: 0;
       padding-top: 7px;
-      padding-left: 10px;
-      padding-right: 10px;
+
       margin: 0;
       border-bottom: 5px solid var(--Magnolia);
       margin-right: 15px;
@@ -892,6 +895,10 @@ OVERVIEW
       letter-spacing: 0em;
       text-align: left;
       // margin-bottom: 10px;
+    }
+    .h3head {
+      padding: 0 !important;
+      margin-bottom: 30px;
     }
     button {
       text-align: right;

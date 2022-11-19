@@ -5,7 +5,7 @@ import GNavbar from "../../../components/Navbar/S-Navigator";
 import Mobile from "../../../components/Navbar/Navbar";
 import TopNav from "../../../components/Navbar/SuperAdminNav";
 
-function SuperAdminComplaint() {
+function AdminComplains() {
   const [events, setEvents] = useState(API.slice(0, 20));
   const [value, setvalue] = useState("");
 
@@ -192,7 +192,7 @@ function SuperAdminComplaint() {
   );
 }
 
-export default SuperAdminComplaint;
+export default AdminComplains;
 
 const Action = ({ selected, setSelected }) => {
   const [isActive, setIsActive] = useState(false);
@@ -216,7 +216,11 @@ const Action = ({ selected, setSelected }) => {
         }
       }}
     >
-      <div className="select-btn" onClick={(e) => setIsActive(!isActive)}>
+      <div
+        className="select-btn"
+        id={selected === "Resolved" ? "greenBg" : "redBg"}
+        onClick={(e) => setIsActive(!isActive)}
+      >
         <input type="text" readOnly class="checked_value" />
         <span className="default_status">{selected}</span>
 
@@ -233,6 +237,10 @@ const Action = ({ selected, setSelected }) => {
               onClick={(e) => {
                 // setSelected(option);
                 setIsActive(false);
+                e.target.parentElement.parentElement.querySelector(
+                  ".select-btn"
+                ).id =
+                  e.target.textContent === "Resolved" ? "greenBg" : "redBg";
               }}
             >
               {option}
@@ -291,15 +299,13 @@ const HandleSearchAndTab = styled.section`
       justify-content: center;
       padding: 0;
       min-width: 100px;
-      padding: 5px 20px;
+
       text-align: center;
       margin-right: 15px;
       border-bottom: 3px solid #c0c0c0;
       button {
         margin: 0;
-        padding: 0 !important;
-        padding: 10px;
-        //styleName: Web/Small Copy;
+        padding: 10 !important;
 
         font-size: 16px;
         font-weight: 400;

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import Edit from "./EditEmergency";
+import Edit from "./EditPenalty";
 
 const TableFrame = styled.div`
   .emergency_table {

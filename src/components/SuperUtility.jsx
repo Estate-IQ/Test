@@ -2,19 +2,17 @@ import React, { useState } from "react";
 // import JsonData from '../Mock-API.json'
 import ReactPaginate from "react-paginate"; //  Using react-paginate from the react library
 import styled from "styled-components";
-import AddNewUtilities from "./NewUtility";
-import GNavbar from "../../../components/Navbar/A-Navigator";
-import Mobile from "../../../components/Navbar/Navbar";
-import TopNav from "../../../components/Navbar/AdminNav";
-import { SVGs } from "../../../assets/svg/SVGs";
+import AddNewUtilities from "./CreateUtility";
+import EditUtility from "./EditUtilty";
 
-function AdminUtility() {
+function SuperUtility() {
   const [events, setEvents] = useState(API.slice(0, 20));
   const [value, setvalue] = useState("");
   const [resident, setResident] = useState("Add New");
   const [pageNumber, setPageNumber] = useState(0); // state representing the page we are on
   const [searchTerm, setSearchTerm] = useState("");
   const [openModal, setOpenModal] = useState(false); // state for Modal
+  const [edit, setEditUtility] = useState(false); // state for Modal
 
   const [selected, setSelected] = useState("Filter");
   const [activeIndex, setActiveIndex] = useState(1);
@@ -29,7 +27,7 @@ function AdminUtility() {
 
   const handleOnchange = (val) => setvalue(val);
   // const [ API, setData ] = useState(API)
-  const eventsPerPage = 8;
+  const eventsPerPage = 4;
   const pagesVisited = pageNumber * eventsPerPage;
 
   const filterEvents = (catItem) => {
@@ -72,7 +70,9 @@ function AdminUtility() {
               </div>
             </div>
             <div className="btn">
-              <span className="edit-btn">Edit</span>
+              <span className="edit-btn" onClick={() => setEditUtility(true)}>
+                Edit
+              </span>
               <span className="del-btn">Delete</span>
             </div>
           </div>
@@ -89,71 +89,61 @@ function AdminUtility() {
 
   return (
     <>
-      <section className="change_ratio">
-        <GNavbar utility="active_tab" />
-        <Mobile />
-        <AddNewUtilities open={openModal} onClose={() => setOpenModal(false)} />
-        <div className="selected_tab">
-          <TopNav />
-          <div className="dashboard_container">
-            <div className="event-container">
-              <HandleSearchAndTab>
-                <h6></h6>
-                <div className="event-input">
-                  <div class="search_set">
-                    <img
-                      src="https://www.svgrepo.com/show/13682/search.svg"
-                      alt=""
-                    />
-                    <input
-                      className="eventt"
-                      type="text"
-                      name="name"
-                      placeholder="Search"
-                      onChange={(event) => {
-                        setSearchTerm(event.target.value);
-                      }}
-                    />
-                  </div>
+      <AddNewUtilities open={openModal} onClose={() => setOpenModal(false)} />
+      <EditUtility open={edit} onClose={() => setEditUtility(false)} />
 
-                  <button
-                    className="important-btn"
-                    onClick={() => setOpenModal(true)}
-                  >
-                    Add Utility
-                  </button>
-                </div>
-              </HandleSearchAndTab>
+      <div className="event-container">
+        <HandleSearchAndTab>
+          <h6></h6>
+          <div className="event-input">
+            <div class="search_set">
+              <img src="https://www.svgrepo.com/show/13682/search.svg" alt="" />
+              <input
+                className="eventt"
+                type="text"
+                name="name"
+                placeholder="Search"
+                onChange={(event) => {
+                  setSearchTerm(event.target.value);
+                }}
+              />
             </div>
 
-            <div className="panels">
-              <div className={`panel ${checkActive(1, "active")}`}>
-                <TableFrame>
-                  <div className="team-members">
-                    <div className="Utility_table">{displayEvents}</div>
-                  </div>
-                </TableFrame>
-              </div>
-            </div>
-            <ReactPaginate
-              previousLabel={"<"}
-              nextLabel={">"}
-              pageCount={pageCount}
-              onPageChange={changePage}
-              containerClassName={"paginationButtons"}
-              previousLinkClassName={"previousButton"}
-              nextLinkClassName={"nextButton"}
-              disabledClassName={"paginationDisabled"}
-              activeClassName={"paginationActive"}
-            />
+            <button
+              className="important-btn"
+              onClick={() => setOpenModal(true)}
+            >
+              Create Utility
+            </button>
           </div>
+        </HandleSearchAndTab>
+      </div>
+
+      <div className="panels">
+        <div className={`panel ${checkActive(1, "active")}`}>
+          <TableFrame>
+            <div className="team-members">
+              <div className="Utility_table">{displayEvents}</div>
+            </div>
+          </TableFrame>
         </div>
-      </section>
+      </div>
+      <ReactPaginate
+        previousLabel={"<"}
+        nextLabel={">"}
+        pageCount={pageCount}
+        onPageChange={changePage}
+        containerClassName={"paginationButtons"}
+        previousLinkClassName={"previousButton"}
+        nextLinkClassName={"nextButton"}
+        disabledClassName={"paginationDisabled"}
+        activeClassName={"paginationActive"}
+      />
     </>
   );
 }
 
-export default AdminUtility;
+export default SuperUtility;
 
 const HandleSearchAndTab = styled.section`
   .container {
@@ -217,7 +207,7 @@ const HandleSearchAndTab = styled.section`
       justify-content: center;
       padding: 0;
       min-width: 100px;
-      padding: 5px 20px;
+
       text-align: center;
       margin-right: 15px;
       border-bottom: 3px solid #c0c0c0;
