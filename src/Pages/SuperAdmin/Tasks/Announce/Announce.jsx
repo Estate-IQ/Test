@@ -25,7 +25,7 @@ const Modal = ({ open, onClose }) => {
           // method="post"
           // action="/profile"
           onSubmit={handleSubmit}
-          className="new_estates_form swing-in-bottom-fwd"
+          className="new_estates_form fade-in-bck"
         >
           <div className="create_est ">
             <div className="form_txt">

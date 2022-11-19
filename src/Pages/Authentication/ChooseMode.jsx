@@ -14,7 +14,7 @@ const ChooseMode = () => {
       <div className="create_bg">
         <div className="create_est">
           <img src={Images.logo} alt="Estate-IQ" />
-          <form action="" className="swing-in-bottom-fwd">
+          <form action="" className="fade-in-bck">
             <div className="form_txt">
               <h1>Create an Account</h1>
               <p className="with_link">

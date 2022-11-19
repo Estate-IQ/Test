@@ -149,7 +149,7 @@ class MasterForm extends React.Component {
                 onSubmit={this.handleSubmit}
                 // method="post"
                 // action="/profile"
-                className=" swing-in-bottom-fwd"
+                className=" fade-in-bck"
               >
                 <p>Step {this.state.currentStep} of 3</p>
 
@@ -231,7 +231,7 @@ function Step1(props) {
   return (
     <>
       <FormVanilla>
-        <div className="swing-in-bottom-fwd">
+        <div className="fade-in-bck">
           <div className="form_txt">
             <h1>Join Estate</h1>
             <h4>Resident Info</h4>
@@ -298,7 +298,7 @@ function Step2(props) {
   return (
     <>
       <FormVanilla>
-        <div className="swing-in-bottom-fwd">
+        <div className="fade-in-bck">
           <div className="form_txt">
             {/* <p>Step 1 of 2</p> */}
             <h1>Join Estate</h1>
@@ -356,7 +356,7 @@ function Step3(props) {
   return (
     <>
       <FormVanilla>
-        <div className="swing-in-bottom-fwd">
+        <div className="fade-in-bck">
           <div className="form_txt">
             {/* <p>Step 1 of 2</p> */}
             <h1>Join Estate</h1>

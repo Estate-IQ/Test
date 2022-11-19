@@ -89,7 +89,7 @@ class MasterForm extends React.Component {
           onSubmit={this.handleSubmit}
           // method="post"
           // action="/profile"
-          className="new_estates_form swing-in-bottom-fwd"
+          className="new_estates_form fade-in-bck"
         >
           <p>Step {this.state.currentStep} of 2</p>
           {/* 

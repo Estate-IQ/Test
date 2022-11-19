@@ -145,7 +145,7 @@ class MasterForm extends React.Component {
                 onSubmit={this.handleSubmit}
                 // method="post"
                 // action="/profile"
-                className=" swing-in-bottom-fwd"
+                className=" fade-in-bck"
               >
                 <p>Step {this.state.currentStep} of 2</p>
 
@@ -221,7 +221,7 @@ function Step1(props) {
   return (
     <>
       <FormVanilla>
-        <div className="swing-in-bottom-fwd">
+        <div className="fade-in-bck">
           <div className="form_txt">
             {/* <p>Step 1 of 2</p> */}
             <h1>Create Estate</h1>
@@ -279,6 +279,20 @@ function Step1(props) {
   );
 }
 
+/**Function that generate Estate ID */
+const HandleRamdomId = () => {
+  document.getElementById("estateId").value = generateID(6);
+};
+function generateID(length) {
+  let text = "";
+  const possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+
+  for (let i = 0; i < length; i++) {
+    text += possible.charAt(Math.floor(Math.random() * possible.length));
+  }
+
+  return text;
+}
 // =======
 // STEP 2
 // =======
@@ -289,7 +303,7 @@ function Step2(props) {
   return (
     <>
       <FormVanilla>
-        <div className="swing-in-bottom-fwd">
+        <div className="fade-in-bck">
           <div className="form_txt">
             {/* <p>Step 1 of 2</p> */}
             <h1>Create Estate</h1>
@@ -299,6 +313,7 @@ function Step2(props) {
             type="text"
             placeholder="Estate Name"
             id="estateName"
+            onKeyUp={HandleRamdomId}
             value={props.estateName}
             onChange={props.handleChange}
             name="estateName"
@@ -327,9 +342,10 @@ function Step2(props) {
             <States />
           </div> */}
           <input
-            type="number"
+            type="text"
             id="estateId"
             name="estateId"
+            readOnly
             placeholder="Estate ID"
             value={props.estateId}
             onChange={props.handleChange}

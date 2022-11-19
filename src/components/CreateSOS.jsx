@@ -31,7 +31,7 @@ const CreateSOS = () => {
       onSubmit={handleSubmit}
       // method="post"
       // action="/profile"
-      className="new_estates_form swing-in-bottom-fwd"
+      className="new_estates_form fade-in-bck"
     >
       <div className="form-group">
         {/* <label htmlFor="title">Email address</label> */}
