@@ -30,51 +30,59 @@ import ResetPassword from "./components/ResetPassword/ResetPassword";
 import UpdatePassword from "./components/ResetPassword/ResetPassword2";
 
 function App() {
+  const [loading, setLoading] = useState(true);
+  const spinner = document.getElementById("spinner");
+  if (spinner) {
+    setTimeout(() => {
+      spinner.style.display = "none";
+      setLoading(false);
+    }, 3000);
+  }
   return (
-    // !loading && (
-    <>
-      <BrowserRouter basename="/estate-iq">
-        <Routes>
-          {/* ADMIN */}
-          <Route path="/admin/dashboard" element={<AdminOverview />} />
-          <Route path="/admin/residence" element={<AdminResidence />} />
-          <Route path="/admin/activitylog" element={<AdminActivityLog />} />
-          <Route path="/admin/utilities" element={<AdminUtilities />} />
-          <Route path="/admin/transaction" element={<AdminTransaction />} />
-          <Route path="/admin/complaint" element={<AdminComplaint />} />
+    !loading && (
+      <>
+        <BrowserRouter basename="/estate-iq">
+          <Routes>
+            {/* ADMIN */}
+            <Route path="/admin" element={<AdminOverview />} />
+            <Route path="/admin/residence" element={<AdminResidence />} />
+            <Route path="/admin/activitylog" element={<AdminActivityLog />} />
+            <Route path="/admin/utilities" element={<AdminUtilities />} />
+            <Route path="/admin/transaction" element={<AdminTransaction />} />
+            <Route path="/admin/complaint" element={<AdminComplaint />} />
 
-          {/* AUTHENTICATION */}
-          <Route path="/get-started" element={<ChooseMode />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/create-estate" element={<CreateEstate />} />
-          <Route path="/join-estate" element={<JoinEstate />} />
-          <Route path="/reset-password" element={<ResetPassword />} />
-          <Route path="/update-password" element={<UpdatePassword />} />
+            {/* AUTHENTICATION */}
+            <Route path="/get-started" element={<ChooseMode />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/create-estate" element={<CreateEstate />} />
+            <Route path="/join-estate" element={<JoinEstate />} />
+            <Route path="/reset-password" element={<ResetPassword />} />
+            <Route path="/update-password" element={<UpdatePassword />} />
 
-          {/* SUPERADMIN */}
-          <Route index element={<SuperAdminOverview />} />
-          <Route path="/superadmin-estate" element={<SuperAdminEstate />} />
-          <Route
-            path="/superadmin/activitylog"
-            element={<SuperActivityLog />}
-          />
-          <Route path="/superadmin-tasks" element={<SuperAdminTask />} />
-          <Route
-            path="/superadmin-permission"
-            element={<SuperAdminPermission />}
-          />
-          <Route
-            path="/superadmin-complaint"
-            element={<SuperAdminComplaint />}
-          />
+            {/* SUPERADMIN */}
+            <Route index element={<SuperAdminOverview />} />
+            <Route path="/superadmin-estate" element={<SuperAdminEstate />} />
+            <Route
+              path="/superadmin/activitylog"
+              element={<SuperActivityLog />}
+            />
+            <Route path="/superadmin-tasks" element={<SuperAdminTask />} />
+            <Route
+              path="/superadmin-permission"
+              element={<SuperAdminPermission />}
+            />
+            <Route
+              path="/superadmin-complaint"
+              element={<SuperAdminComplaint />}
+            />
 
-          {/* SLUGS */}
-          <Route path="/profile" element={<EstateProfile />} />
-          <Route path="/editpackage" element={<EditPackage />} />
-        </Routes>
-      </BrowserRouter>
-    </>
-    // )
+            {/* SLUGS */}
+            <Route path="/profile" element={<EstateProfile />} />
+            <Route path="/editpackage" element={<EditPackage />} />
+          </Routes>
+        </BrowserRouter>
+      </>
+    )
   );
 }
 
