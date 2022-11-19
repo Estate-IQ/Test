@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/estate-iq/static/css/main.b9f424f4.css",
-    "main.js": "/estate-iq/static/js/main.59486445.js",
+    "main.js": "/estate-iq/static/js/main.6b6cb9fd.js",
     "static/media/about.png": "/estate-iq/static/media/about.4c70c71c7ad630fb478f.png",
     "static/media/individual_p.png": "/estate-iq/static/media/individual_p.37c7a7703df8de16f315.png",
     "static/media/feature1.png": "/estate-iq/static/media/feature1.c7f957c1de39382371f3.png",
@@ -65,13 +65,13 @@
     "static/media/python.svg": "/estate-iq/static/media/python.4b58c87e8122aa176bc9a28a86ba3355.svg",
     "static/media/community.svg": "/estate-iq/static/media/community.7e074b3a18732907b9c2ef1802942f2f.svg",
     "static/media/support.svg": "/estate-iq/static/media/support.7e074b3a18732907b9c2ef1802942f2f.svg",
+    "index.html": "/estate-iq/index.html",
     "static/media/estate_location.svg": "/estate-iq/static/media/estate_location.3b84d3ba6854865f7609.svg",
     "static/media/handoff.svg": "/estate-iq/static/media/handoff.f9557e987a645afd3a05d3d619fe4e0b.svg",
     "static/media/affordable.svg": "/estate-iq/static/media/affordable.5d07f9d0836cb9abfbab5bbf3e574e34.svg",
     "static/media/google.svg": "/estate-iq/static/media/google.473a70040ef0272cc443.svg",
     "static/media/Entry.svg": "/estate-iq/static/media/Entry.513cdb0b3008782b7b7096dd8f8d8591.svg",
     "static/media/w_twitter.svg": "/estate-iq/static/media/w_twitter.ff891d07b0fc563e163021ea1f001b30.svg",
-    "index.html": "/estate-iq/index.html",
     "static/media/est.svg": "/estate-iq/static/media/est.16067f6498c11eda5348.svg",
     "static/media/creation.svg": "/estate-iq/static/media/creation.26dca0584c6e8562400baed22cba81f1.svg",
     "static/media/residents.svg": "/estate-iq/static/media/residents.3dee17f714a63bbc1d77ba62e4c22e92.svg",
@@ -119,10 +119,10 @@
     "static/media/red_exit.svg": "/estate-iq/static/media/red_exit.d33f50a099d8444c7b41.svg",
     "static/media/close.svg": "/estate-iq/static/media/close.17b64f195f145e24a47e4438ecc4e043.svg",
     "main.b9f424f4.css.map": "/estate-iq/static/css/main.b9f424f4.css.map",
-    "main.59486445.js.map": "/estate-iq/static/js/main.59486445.js.map"
+    "main.6b6cb9fd.js.map": "/estate-iq/static/js/main.6b6cb9fd.js.map"
   },
   "entrypoints": [
     "static/css/main.b9f424f4.css",
-    "static/js/main.59486445.js"
+    "static/js/main.6b6cb9fd.js"
   ]
 }
