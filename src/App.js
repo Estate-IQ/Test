@@ -5,11 +5,11 @@ import "./assets/css/estate.css";
 
 // ADMIN
 import AdminOverview from "./Pages/Admin/A-Overview";
-// import AdminResidence from "./Pages/Admin/Residence";
-// import AdminUtilities from "./Pages/Admin/Utilities";
-// import AdminTransaction from "./Pages/Admin/AdminTransaction";
-// import AdminActivityLog from "./Pages/Admin/Activity";
-// import AdminComplaint from "./Pages/Admin/AdminComplains";
+import AdminResidence from "./Pages/Admin/Residence";
+import AdminUtilities from "./Pages/Admin/Utilities";
+import AdminTransaction from "./Pages/Admin/AdminTransaction";
+import AdminActivityLog from "./Pages/Admin/Activity";
+import AdminComplaint from "./Pages/Admin/AdminComplains";
 
 // ===================
 
@@ -45,11 +45,11 @@ function App() {
           <Routes>
             {/* ADMIN */}
             <Route path="/admin" element={<AdminOverview />} />
-            {/* <Route path="/admin/residence" element={<AdminResidence />} />
+            <Route path="/admin/residence" element={<AdminResidence />} />
             <Route path="/admin/activitylog" element={<AdminActivityLog />} />
             <Route path="/admin/utilities" element={<AdminUtilities />} />
             <Route path="/admin/transaction" element={<AdminTransaction />} />
-            <Route path="/admin/complaint" element={<AdminComplaint />} /> */}
+            <Route path="/admin/complaint" element={<AdminComplaint />} />
 
             {/* AUTHENTICATION */}
             <Route path="/get-started" element={<ChooseMode />} />
