@@ -134,6 +134,9 @@ let OnboardingTag = styled.div`
       color: #1737e6;
     }
   }
+  .ff-right {
+    margin-bottom: 30px;
+  }
   @media (min-width: 768px) {
     .outlined {
       margin-right: 10px;

@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import ReactPaginate from "react-paginate"; //  Using react-paginate from the react library
 import styled from "styled-components";
 import GNavbar from "../../components/Navbar/A-Navigator";
-import Mobile from "../../components/Navbar/Navbar";
+import Mobile from "../../components/Navbar/AdminMobile";
 import TopNav from "../../components/Navbar/AdminNav";
 
 function AdminActivityLog() {

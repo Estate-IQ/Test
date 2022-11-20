@@ -3,16 +3,29 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { SVGs } from "../assets/svg/SVGs";
 
+let Card = styled.div`
+  .mark {
+    img {
+      margin-bottom: 20px;
+    }
+    .num {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+`;
 const Overview_card = () => {
   const PerOverview = (props) => {
     return (
-      <Link to={props.link} className="grid-row per_overview">
-        <img src={props.img} alt="" />
-        <div className="num">
-          <p>{props.type}</p>
-          <h3>{props.count}</h3>
-        </div>
-      </Link>
+      <Card className="grid-row per_overview">
+        <Link to={props.link} className="mark">
+          <img src={props.img} alt="" />
+          <div className="num">
+            <p>{props.type}</p>
+            <h3>{props.count}</h3>
+          </div>
+        </Link>
+      </Card>
     );
   };
   return (

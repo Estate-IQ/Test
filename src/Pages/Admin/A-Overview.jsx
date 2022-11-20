@@ -1,6 +1,6 @@
 import React from "react";
 import GNavbar from "../../components/Navbar/A-Navigator";
-import Mobile from "../../components/Navbar/Navbar";
+import Mobile from "../../components/Navbar/AdminMobile";
 import TopNav from "../../components/Navbar/AdminNav";
 import AdminCards from "../../components/AdminCards";
 import Onboarding from "../../components/AdminOnboarding";
