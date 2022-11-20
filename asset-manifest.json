@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/estate-iq/static/css/main.b9f424f4.css",
-    "main.js": "/estate-iq/static/js/main.537d7741.js",
+    "main.js": "/estate-iq/static/js/main.b068cabc.js",
     "static/media/about.png": "/estate-iq/static/media/about.4c70c71c7ad630fb478f.png",
     "static/media/individual_p.png": "/estate-iq/static/media/individual_p.37c7a7703df8de16f315.png",
     "static/media/feature1.png": "/estate-iq/static/media/feature1.c7f957c1de39382371f3.png",
@@ -119,10 +119,10 @@
     "static/media/red_exit.svg": "/estate-iq/static/media/red_exit.d33f50a099d8444c7b41.svg",
     "static/media/close.svg": "/estate-iq/static/media/close.17b64f195f145e24a47e4438ecc4e043.svg",
     "main.b9f424f4.css.map": "/estate-iq/static/css/main.b9f424f4.css.map",
-    "main.537d7741.js.map": "/estate-iq/static/js/main.537d7741.js.map"
+    "main.b068cabc.js.map": "/estate-iq/static/js/main.b068cabc.js.map"
   },
   "entrypoints": [
     "static/css/main.b9f424f4.css",
-    "static/js/main.537d7741.js"
+    "static/js/main.b068cabc.js"
   ]
 }
