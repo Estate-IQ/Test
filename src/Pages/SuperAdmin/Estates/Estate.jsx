@@ -126,6 +126,9 @@ const Estate = () => {
               >
                 Add New Estate
               </button>
+              <Link to="/admin">
+                <button className="oulined-btn">Test BTN</button>
+              </Link>
             </div>
 
             {/* RESULT FROM TAB */}
