@@ -174,6 +174,9 @@ function AdminComplains() {
                 <Wrapper>{displayEvents}</Wrapper>
               </div>
             </div>
+            <Link to="/admin">
+              <button className="outlined-btn">Test BTN</button>
+            </Link>
             <ReactPaginate
               previousLabel={"<"}
               nextLabel={">"}
