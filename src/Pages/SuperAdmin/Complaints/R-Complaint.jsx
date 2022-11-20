@@ -4,6 +4,7 @@ import styled from "styled-components";
 import GNavbar from "../../../components/Navbar/S-Navigator";
 import Mobile from "../../../components/Navbar/Navbar";
 import TopNav from "../../../components/Navbar/SuperAdminNav";
+import { Link } from "react-router-dom";
 
 function AdminComplains() {
   const [events, setEvents] = useState(API.slice(0, 20));
