@@ -6,6 +6,7 @@ import call from "../assets/svg/call_a.svg";
 import { Images } from "../assets/images/Images";
 import GNavbar from "./Navbar/S-Navigator";
 import Mobile from "../components/Navbar/Navbar";
+import TopNav from "../components/Navbar/SuperAdminNav";
 import { Link } from "react-router-dom";
 
 const Profile = () => {
@@ -20,21 +21,7 @@ const Profile = () => {
           {/* ========
         WITH SEARCHBOX
         =========== */}
-          <div className="navbar_container">
-            <div className="dashboard_container input_avatar">
-              <h6>Hello</h6>
-              <div className="violet">
-                <img src={SVGs.notification} alt="Bell" className="note_bell" />
-                <div className="user_mode">
-                  <div>
-                    <h3>Oladokun Moses</h3>
-                    <p>Super Admin</p>
-                  </div>
-                  <img src={Images.img2} alt="" />
-                </div>
-              </div>
-            </div>
-          </div>
+          <TopNav />
 
           {/* Dashboard - container */}
           <div className="dashboard_container">

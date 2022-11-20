@@ -6,6 +6,7 @@ import GNavbar from "../../../components/Navbar/S-Navigator";
 import Mobile from "../../../components/Navbar/Navbar";
 import { Link } from "react-router-dom";
 import AllTask from "../../../components/Tasks/AllTask";
+import TopNav from "../../../components/Navbar/SuperAdminNav";
 import Advert from "./Advert";
 import Reminder from "./Reminder";
 import Announcement from "../../SuperAdmin/Tasks/Announce/Announce";
@@ -79,28 +80,7 @@ const Estate = () => {
         {/* ============
         WITH SEARCHBOX
         =============== */}
-        <div className="navbar_container">
-          <div className="dashboard_container input_avatar">
-            <input
-              type="text"
-              placeholder="Search Estate..."
-              value={searchInput}
-              onChange={(e) => {
-                setSearchInput(e.target.value);
-              }}
-            />
-            <div className="violet">
-              <img src={SVGs.notification} alt="Bell" className="note_bell" />
-              <div className="user_mode">
-                <div>
-                  <h3>Oladokun Moses</h3>
-                  <p>Super Admin</p>
-                </div>
-                <img src={Images.img2} alt="" />
-              </div>
-            </div>
-          </div>
-        </div>
+        <TopNav />
 
         {/* Dashboard - container */}
         <div className="dashboard_container">

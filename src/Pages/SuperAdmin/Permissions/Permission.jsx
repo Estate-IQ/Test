@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import Modal from "./CreateP";
-import { SVGs } from "../../../assets/svg/SVGs";
-import { Images } from "../../../assets/images/Images";
+import TopNav from "../../../components/Navbar/SuperAdminNav";
 import GNavbar from "../../../components/Navbar/S-Navigator";
 import Mobile from "../../../components/Navbar/Navbar";
 import Packages from "../../../components/Packages";
@@ -18,21 +17,7 @@ const Permission = () => {
         {/* ============
         WITH SEARCHBOX
         =============== */}
-        <div className="navbar_container">
-          <div className="dashboard_container input_avatar">
-            <h6></h6>
-            <div className="violet">
-              <img src={SVGs.notification} alt="Bell" className="note_bell" />
-              <div className="user_mode">
-                <div>
-                  <h3>Oladokun Moses</h3>
-                  <p>Super Admin</p>
-                </div>
-                <img src={Images.img2} alt="" />
-              </div>
-            </div>
-          </div>
-        </div>
+        <TopNav />
 
         {/* Dashboard - container */}
         <div className="dashboard_container">
