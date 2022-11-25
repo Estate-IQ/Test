@@ -44,7 +44,7 @@ function App() {
         <BrowserRouter basename="/estate-iq">
           <Routes>
             {/* ADMIN */}
-            <Route path="/admin" element={<AdminOverview />} />
+            <Route exact path="/admin" element={<AdminOverview />} />
             <Route path="/admin/residence" element={<AdminResidence />} />
             <Route path="/admin/activitylog" element={<AdminActivityLog />} />
             <Route path="/admin/utilities" element={<AdminUtilities />} />

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import styled from "styled-components";
 import { Images } from "../../assets/images/Images";
 
 const ChooseMode = () => {
@@ -21,10 +22,10 @@ const ChooseMode = () => {
                 Existing user? <Link to="/login"> Log in</Link>
               </p>
             </div>
-            <div className="svg_control">
-              <Link to="/create-estate">
-                <div className="gratitude">
-                  <label htmlFor="ManageEstate" className="dispatch_svg">
+            <ChooseModeContainer className="chooseMode">
+              <div className="svg_control">
+                <Link to="/create-estate">
+                  <div className="gratitude">
                     <div className="svg">
                       <svg
                         width="40"
@@ -69,16 +70,10 @@ const ChooseMode = () => {
                         estate
                       </p>
                     </div>
-                  </label>
-                </div>
-              </Link>
-              <Link to="/join-estate">
-                <div className="gratitude">
-                  <label
-                    htmlFor="JoinEstate"
-                    className="dispatch_svg"
-                    // onClick={() => setSelectedPath("/female")}
-                  >
+                  </div>
+                </Link>
+                <Link to="/join-estate">
+                  <div className="gratitude">
                     <div className="svg">
                       <svg
                         width="40"
@@ -115,13 +110,10 @@ const ChooseMode = () => {
                         household.
                       </p>
                     </div>
-                  </label>
-                </div>
-              </Link>
-            </div>
-            {/* <Link to="/join-estate">
-              <button className="important-btn">Create Account</button>
-            </Link> */}
+                  </div>
+                </Link>
+              </div>
+            </ChooseModeContainer>
           </form>
         </div>
       </div>
@@ -133,3 +125,49 @@ const ChooseMode = () => {
 };
 
 export default ChooseMode;
+let ChooseModeContainer = styled.div`
+  .gratitude {
+    display: flex;
+    margin-top: 30px;
+    justify-content: space-between;
+    padding: 20px;
+    background: #fbfbfb;
+    transform: scale(1);
+    transition: 0.4s;
+    border: 1px solid rgba(44, 51, 58, 0.2);
+    border-radius: 17.9149px;
+    &:hover {
+      transform: scale(1.02);
+      background: #f2f6ff;
+      border: 0.895745px solid #2d4bf3;
+      border-radius: 17.9149px;
+      .svg {
+        transition: 0.4s;
+        svg {
+          path {
+            fill: #ffffff;
+          }
+          rect {
+            fill: #2d4bf3 !important;
+          }
+        }
+      }
+    }
+    .svg {
+      margin-top: 15px;
+      transition: 0.4s;
+      margin-right: 20px;
+      svg {
+        path {
+          fill: #2d4bf3;
+        }
+        rect {
+          fill: #f2f6ff !important;
+        }
+      }
+    }
+    .choose_txt {
+      width: 90%;
+    }
+  }
+`;

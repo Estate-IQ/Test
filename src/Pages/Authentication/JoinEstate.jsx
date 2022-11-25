@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import { SVGs } from "../../assets/svg/SVGs";
 import States from "../../components/Location";
-import Streets from "../../components/Streets";
+// import Streets from "../../components/Streets";
 // import LGAs from "../../../components/States/State";
 import { Images } from "../../assets/images/Images";
 import styled from "styled-components";
@@ -371,7 +371,15 @@ function Step3(props) {
             value={props.block}
             onChange={props.handleChange}
           />
-          <Streets handleSearch={props.handleSearch} state={props.street} />
+          <input
+            type="text"
+            id="block"
+            name="block"
+            placeholder="Street Name"
+            value={props.block}
+            onChange={props.handleChange}
+          />
+          {/* <Streets handleSearch={props.handleSearch} state={props.street} /> */}
 
           <button className="important-btn">Join Estate</button>
           <div class="cntr">

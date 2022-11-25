@@ -75,7 +75,6 @@ function AdminComplains() {
               This dummy text is supposed to include complainets from respective
               admins, either escalated or direct, and the super admin has the
               prerogagative to mark them as resolved as soon as he attends to
-              them. This dummy text is supposed to include complainets from
               respective admins, either escalated or direct, and the super admin
               has the prerogagative to mark them as resolved as soon as he
               attends to them

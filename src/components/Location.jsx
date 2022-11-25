@@ -1,7 +1,5 @@
 import react, { useState } from "react";
 
-// let data = require("./States.json");
-
 export default function App(props) {
   const [value, setValue] = useState("");
 

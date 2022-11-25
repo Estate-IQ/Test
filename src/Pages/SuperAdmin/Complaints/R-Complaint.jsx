@@ -176,7 +176,7 @@ function AdminComplains() {
               </div>
             </div>
             <Link to="/admin">
-              <button className="outlined-btn">Test BTN</button>
+              <button className="outlined-btn"> BTN</button>
             </Link>
             <ReactPaginate
               previousLabel={"<"}
