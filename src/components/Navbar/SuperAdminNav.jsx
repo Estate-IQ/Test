@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { SVGs } from "../../assets/svg/SVGs";
 import { Images } from "../../assets/images/Images";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 const TopNav = () => {
   const [notify, setNotification] = useState("notification");
@@ -55,7 +56,9 @@ const TopNav = () => {
               <h3>Oladokun Moses</h3>
               <p>Super Admin</p>
             </div>
-            <img src={Images.img2} alt="" />
+            <Link to="/superadmin/settings">
+              <img src={Images.img2} alt="" />
+            </Link>
           </div>
         </div>
       </div>

@@ -222,13 +222,8 @@ let HandleHeight = styled.div`
     }
   }
   @media (max-width: 1380px) {
-    height: 100vh !important;
-    overflow: auto;
     .changeAdmin {
-      margin-bottom: 30px;
-    }
-    .desktop_nav {
-      height: 115vh !important;
+      margin-bottom: 20px;
     }
   }
 `;

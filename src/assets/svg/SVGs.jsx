@@ -10,6 +10,7 @@ export const SVGs = {
   close: require("../svg/close.svg").default,
   caution: require("../svg/caution.svg").default,
   location: require("../svg/location.svg").default,
+  FrameImg: require("../svg/img_frame.svg").default,
   overview_svg: require("../svg/estates_svg.svg").default,
   phone: require("../svg/phone.svg").default,
   notification: require("../svg/notification.svg").default,

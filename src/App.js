@@ -10,6 +10,7 @@ import AdminUtilities from "./Pages/Admin/Utilities";
 import AdminTransaction from "./Pages/Admin/AdminTransaction";
 import AdminActivityLog from "./Pages/Admin/Activity";
 import AdminComplaint from "./Pages/Admin/AdminComplains";
+import AdminSettings from "./Pages/Settings/Admin";
 
 // ===================
 
@@ -19,6 +20,7 @@ import JoinEstate from "./Pages/Authentication/JoinEstate";
 import CreateEstate from "./Pages/Authentication/CreateEstate";
 import EstateProfile from "./components/Profile";
 import EditPackage from "./Pages/SuperAdmin/Permissions/Edit";
+import SuperAdminSettings from "./Pages/Settings/SuperAdmin";
 import SuperAdminOverview from "./Pages/SuperAdmin/S-Overview";
 import SuperActivityLog from "./Pages/SuperAdmin/Estates/ActivityLog";
 import SuperAdminEstate from "./Pages/SuperAdmin/Estates/Estate";
@@ -45,6 +47,7 @@ function App() {
           <Routes>
             {/* ADMIN */}
             <Route exact path="/admin" element={<AdminOverview />} />
+            <Route exact path="/admin/settings" element={<AdminSettings />} />
             <Route path="/admin/residence" element={<AdminResidence />} />
             <Route path="/admin/activitylog" element={<AdminActivityLog />} />
             <Route path="/admin/utilities" element={<AdminUtilities />} />
@@ -61,6 +64,10 @@ function App() {
 
             {/* SUPERADMIN */}
             <Route index element={<SuperAdminOverview />} />
+            <Route
+              path="/superadmin/settings"
+              element={<SuperAdminSettings />}
+            />
             <Route path="/superadmin-estate" element={<SuperAdminEstate />} />
             <Route
               path="/superadmin/activitylog"
