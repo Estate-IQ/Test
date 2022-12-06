@@ -43,7 +43,7 @@ function App() {
   return (
     !loading && (
       <>
-        <BrowserRouter basename="/estate-iq">
+        <BrowserRouter basename="/">
           <Routes>
             {/* ADMIN */}
             <Route exact path="/admin" element={<AdminOverview />} />

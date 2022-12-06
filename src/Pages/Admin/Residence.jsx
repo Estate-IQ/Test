@@ -346,6 +346,7 @@ const Action = ({ selected, setSelected }) => {
     </div>
   );
 };
+
 const HandleSearchAndTab = styled.section`
   .container {
     margin-bottom: 20px;
